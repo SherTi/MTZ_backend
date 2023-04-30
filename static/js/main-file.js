@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    const partner_swiper = new Swiper('.partner_swiper',{
+    const partner_swiper = new Swiper(document.querySelector('.partner_swiper'),{
         direction: 'horizontal',
         effect: 'slide',
         margin: 30,
@@ -80,17 +80,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     const nav = document.querySelector('.catalog-btn')
     const menu = document.querySelector('.container-nav')
-    nav.addEventListener('click' , (event) =>{
+    if (nav) {
+        nav.addEventListener('click' , (event) =>{
             event.preventDefault()
             menu.classList.add('active')
             document.body.style.overflow = 'hidden'
         })
-    menu.addEventListener('click' , (event) => {
-        if (event.target.classList.contains('nav-left-panel')){
-            menu.classList.remove('active')
-            document.body.style.overflow = 'visible'
-        }
-    })
+    }
+    if(menu){
+        menu.addEventListener('click' , (event) => {
+            if (event.target.classList.contains('nav-left-panel')){
+                menu.classList.remove('active')
+                document.body.style.overflow = 'visible'
+            }
+        })
+    }
     let stroke = document.querySelectorAll('.stroke-nav')
     let navCatalog = document.querySelector('.nav-block2')
     let text_active = document.querySelectorAll('.text-nav')
@@ -106,15 +110,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     let btn_menu = document.querySelector('.btn_nav_panel')
     let menu_body = document.querySelector('.background_r-nav-menu')
-    btn_menu.addEventListener('click' , (event) => {
-        event.preventDefault()
-        menu_body.classList.toggle('active_menu')
-    })
-    menu_body.addEventListener('click', (event) => {
-        if(event.target.classList.contains('background_r-nav-menu')){
-            menu_body.classList.remove('active_menu')
-        }
-    })
+    if(btn_menu){
+        btn_menu.addEventListener('click' , (event) => {
+            event.preventDefault()
+            menu_body.classList.toggle('active_menu')
+        })
+    }
+    if(menu_body){
+        menu_body.addEventListener('click', (event) => {
+            if(event.target.classList.contains('background_r-nav-menu')){
+                menu_body.classList.remove('active_menu')
+            }
+        })
+    }
 
     document.querySelectorAll('.r-nav-title-btn').forEach((el) => {
         el.addEventListener('click', () => {
@@ -127,15 +135,48 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         })
     })
-    const swipe_block = document.querySelectorAll('.r-nav-menu_tablet');
-    document.querySelectorAll('.r-nav-title-btn').forEach((el) => {
-        el.addEventListener('click' ,() =>{
-            document.querySelectorAll('.r-nav-icon').forEach((el) =>{
-                el.classList.toggle('b-icon')
-                swipe_block.forEach((el) =>{
-                    el.classList.add('swipe_block')
-                });
+    let swipe_block = document.querySelectorAll('.r-nav-menu_tablet');
+    if(swipe_block){
+        document.querySelectorAll('.r-nav-title-btn').forEach((el) => {
+            el.addEventListener('click' ,(event) =>{
+                document.querySelectorAll('.r-nav-icon').forEach((el) =>{
+                    swipe_block.forEach((el) =>{
+                        el.classList.add('swipe_block')
+                        if (swipe_block.classList.contains('swipe_block')){
+                            swipe_block.classList.remove('swipe_block')
+                        }
+                    });
+                })
             })
+        });
+    }
+    let icon_change = document.querySelector('.r-nav-icon')
+    let btn_change = document.querySelector('.r-nav-title-btn')
+    if (btn_change){
+        btn_change.addEventListener('click' , () => {
+            icon_change.classList.toggle('b-icon')
         })
-    });
+    }
+    let order_btn = document.querySelector('.p-btn-more-info')
+    let order_box = document.querySelector('.modal_container')
+    if(order_btn){
+        order_btn.addEventListener('click' , (event) => {
+            event.preventDefault()
+            order_box.classList.add('modal_view')
+        })
+    }
+    if(order_box){
+        order_box.addEventListener('click' , (event) => {
+            if(event.target.classList.contains('modal_container')){
+                order_box.classList.remove('modal_view')
+            }
+        })
+    }
+    let search = document.querySelector('.search-btn')
+    let search_block = document.querySelector('.search-input-block')
+    if (search){
+        search.addEventListener('click' , (event) =>{
+            search_block.classList.toggle('width_100')
+        })
+    }
 });

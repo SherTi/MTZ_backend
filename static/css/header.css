@@ -194,9 +194,6 @@ input{
     font-weight: 700;
     margin-bottom: 40px;
 }
-.img-item-n{
-    margin: 30px 30px 20px 30px ;
-}
 .nav-element-l{
     display: flex;
     align-items: center;
@@ -310,5 +307,12 @@ input{
     }
     .nav-up{
         justify-content: start;
+    }
+    .nav-block1{
+        width: 50%;
+    }
+    nav-left-panel li span{
+        font-size: 14px;
+        font-style: normal;
     }
 }
