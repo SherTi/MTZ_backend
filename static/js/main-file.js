@@ -1,39 +1,41 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    const partner_swiper = new Swiper(document.querySelector('.partner_swiper'),{
-        direction: 'horizontal',
-        effect: 'slide',
-        margin: 30,
-        autoplay: {
-            delay:600,
-        },
-        breakpoints: {
-            1080:{
-                slidesPerView: 5,
-                slidesPerGroup: 1,
-                width:1200,
-                loop: true,
+    if(Swiper('.partner_swiper')){
+        const partner_swiper = new Swiper('.partner_swiper',{
+            direction: 'horizontal',
+            effect: 'slide',
+            margin: 30,
+            autoplay: {
+                delay:600,
             },
-            425:{
-                slidesPerView:5,
-                slidesPerGroup:1,
-                width:750,
-                loop: true,
-            },
-            375:{
-                slidesPerView:5,
-                slidesPerGroup:1,
-                width:750,
-                loop: true,
-            },
-            320:{
-                slidesPerView:5,
-                slidesPerGroup:1,
-                width:750,
-                loop: true,
+            breakpoints: {
+                1080:{
+                    slidesPerView: 5,
+                    slidesPerGroup: 1,
+                    width:1200,
+                    loop: true,
+                },
+                425:{
+                    slidesPerView:5,
+                    slidesPerGroup:1,
+                    width:750,
+                    loop: true,
+                },
+                375:{
+                    slidesPerView:5,
+                    slidesPerGroup:1,
+                    width:750,
+                    loop: true,
+                },
+                320:{
+                    slidesPerView:5,
+                    slidesPerGroup:1,
+                    width:750,
+                    loop: true,
+                }
             }
-        }
 
-    });
+        });
+    }
     const certificate_slider = new Swiper('.certificate-slider' , {
         direction: 'horizontal',
         loop: true,
