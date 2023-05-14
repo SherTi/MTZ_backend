@@ -1,41 +1,37 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    if(Swiper('.partner_swiper')){
+    if ( new Swiper('partner_swiper')){
         const partner_swiper = new Swiper('.partner_swiper',{
             direction: 'horizontal',
-            effect: 'slide',
             margin: 30,
-            autoplay: {
-                delay:600,
-            },
+            loop: true,
+            autoplay: true,
+            autoplaySpeed:500,
             breakpoints: {
-                1080:{
-                    slidesPerView: 5,
+                1920:{
                     slidesPerGroup: 1,
-                    width:1200,
-                    loop: true,
+                    slidesPerView: 5,
+                },
+                1080:{
+                    slidesPerView: 6,
+                    slidesPerGroup: 1,
                 },
                 425:{
                     slidesPerView:5,
                     slidesPerGroup:1,
-                    width:750,
-                    loop: true,
                 },
                 375:{
                     slidesPerView:5,
                     slidesPerGroup:1,
-                    width:750,
-                    loop: true,
                 },
                 320:{
                     slidesPerView:5,
                     slidesPerGroup:1,
-                    width:750,
-                    loop: true,
                 }
             }
 
         });
     }
+
     const certificate_slider = new Swiper('.certificate-slider' , {
         direction: 'horizontal',
         loop: true,
@@ -54,6 +50,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             bulletClass: "s-dot",
         },
         breakpoints:{
+            1920:{
+                slidesPerView: 5,
+                width:1920,
+                loop:true,
+            },
             1080:{
                 slidesPerView: 4,
                 slidesPerGroup: 1,

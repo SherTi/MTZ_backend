@@ -4,8 +4,9 @@
     background-image: url("../images/main-tractor 2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-    height: 1200px;
+    height: 1685px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -31,10 +32,10 @@
     font-style: normal;
     font-size: 60px;
     text-transform: uppercase;
-    width: 50%;
+    width: 70%;
     line-height: 100%;
     margin-bottom: 10px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 .title-text span{
     color: #02923A;
@@ -1266,29 +1267,33 @@
 .modal_view{
     display: flex;
 }
-@media (max-width: 2685px) {
+@media (max-width: 2885px) {
     .patner-main-item:after {
         background-size: cover;
         top: -165%;
     }
     .background{
-        height: 1550px;
+        height: 1505px;
     }
     .info_container{
         padding: 50px 260px;
-        height: 65%;
-        align-items: center;
+        height: 55%;
+        align-items: end;
     }
     .patner-main-item {
         margin-top: -192px;
     }
-    .background{
-        height: 1320px;
-    }
     .patner-main-item:after {
-        top: -135%;
+        top: -152%;
     }
+    .container{
+       padding: 0 calc((100% - 1768px) / 2 );
+    }
+}
+@media (max-width: 1920px) {
     .info_container{
+        padding: 20px 260px;
+        height: 31%;
         align-items: start;
     }
 }
