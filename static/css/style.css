@@ -1296,6 +1296,9 @@
         height: 31%;
         align-items: start;
     }
+    .block-main{
+        margin-top: 180px;
+    }
 }
 @media (max-width: 1440px) {
     .container{
@@ -1338,6 +1341,9 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+    .n-mob_t{
+        font-size: 13px;
     }
     .f-f-card{
         width: 300px;

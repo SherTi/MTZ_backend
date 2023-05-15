@@ -3,17 +3,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const partner_swiper = new Swiper('.partner_swiper',{
             direction: 'horizontal',
             margin: 30,
+            freeMode:true,
+            speed:10000,
             loop: true,
             autoplay: true,
-            autoplaySpeed:500,
             breakpoints: {
                 1920:{
-                    slidesPerGroup: 1,
-                    slidesPerView: 5,
+                    slidesPerGroup: 7,
+                    slidesPerView: 7,
                 },
                 1080:{
                     slidesPerView: 6,
-                    slidesPerGroup: 1,
+                    slidesPerGroup: 6,
                 },
                 425:{
                     slidesPerView:5,
