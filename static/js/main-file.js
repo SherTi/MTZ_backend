@@ -183,4 +183,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             search_block.classList.toggle('width_100')
         })
     }
+
+    // info_active_block  info_block
+    let btn_info_block = document.querySelector('.info_block')
+    let soc_block =document.querySelector('.info_soc')
+    let btn_img = document.querySelector('.info_img')
+    btn_info_block.addEventListener('click' , () =>  {
+        soc_block.classList.toggle('info_active_block')
+        if (soc_block.classList.contains('info_active_block')) {
+            btn_img.setAttribute('src' ,'/images/cansel.png')
+        }else {
+            btn_img.setAttribute('src' ,'/images/Union.png')
+        }
+    })
 });
