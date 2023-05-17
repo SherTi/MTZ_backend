@@ -853,8 +853,6 @@
     transform: translateX(0%);
 }
 .icon-nav_item{
-    opacity: 0;
-    transform: translateX(-500%);
     width: 10px;
     height: 10px;
     margin-left: 20px;
@@ -1214,20 +1212,6 @@
 }
 
 /**/
-.background_r-nav-menu{
-    display: none;
-}
-
-.background_r-nav-menu{
-    display: none;
-    position: fixed;
-    z-index: 99;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(34, 34, 34, 0.5);
-}
 
 .active_menu{
     display: flex;
