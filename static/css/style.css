@@ -1328,9 +1328,9 @@
 }
 @media (max-width: 1920px) {
     .info_container{
-        padding: 20px 260px;
+        padding: 0 0px;
         height: 31%;
-        align-items: start;
+        align-items: center;
     }
     .block-main{
         margin-top: 180px;
