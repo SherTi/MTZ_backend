@@ -315,4 +315,7 @@ input{
         font-size: 14px;
         font-style: normal;
     }
+    .info_add_block{
+        display: none;
+    }
 }
