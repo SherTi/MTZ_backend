@@ -1842,6 +1842,9 @@
     .nav-up{
         justify-content: start;
     }
+    .info_add_block{
+        display: none;
+    }
     /*header*/
     .background{
         background-image: url("../images/Background-mobi.png");
