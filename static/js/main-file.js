@@ -3,18 +3,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
         const partner_swiper = new Swiper('.partner_swiper',{
             direction: 'horizontal',
             margin: 30,
-            freeMode:true,
-            speed:10000,
-            loop: true,
             autoplay: true,
+
             breakpoints: {
+                2556:{
+                    slidesPerGroup:1,
+                    slidesPerView: 11,
+                    loop: true,
+                    freeMode:true,
+                    speed:8000,
+                },
                 1920:{
-                    slidesPerGroup: 7,
-                    slidesPerView: 7,
+                    slidesPerGroup: 2,
+                    slidesPerView: 11,
+                    loop: true,
+                    freeMode:true,
+                    speed:8000,
                 },
                 1080:{
                     slidesPerView: 6,
-                    slidesPerGroup: 6,
+                    slidesPerGroup: 1,
+                    loop: true,
+                    freeMode:true,
+                    speed:8000,
                 },
                 425:{
                     slidesPerView:5,
@@ -195,4 +206,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         })
     }
+
+
+    const bg = document.querySelector('.background')
+
+    if (bg){
+        bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+        window.addEventListener('resize', () => {
+            if (bg.clientWidth > 768) {
+                bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+            } else {
+                bg.style.height = '';
+            }
+
+        });
+    }
+
 });

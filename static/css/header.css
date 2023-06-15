@@ -56,6 +56,21 @@ input{
 .container{
     padding: 0 calc((100% - 1441px )/2);
 }
+header{
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.header-bg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+}
+
 .header{
     display: flex;
     align-items: center;
@@ -233,7 +248,7 @@ input{
     left: 0;
     background: rgba(34, 34, 34, 0.5);
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
         padding: 0 25px;
     }
