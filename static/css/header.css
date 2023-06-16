@@ -75,7 +75,7 @@ header{
     display: flex;
     align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 100;
 }
 .logo{
     height: 140px;
@@ -171,7 +171,7 @@ header{
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 106;
     top: 0;
     position: fixed;
 }
@@ -322,9 +322,6 @@ header{
     }
     .nav-up{
         justify-content: start;
-    }
-    .nav-block1{
-        width: 50%;
     }
     nav-left-panel li span{
         font-size: 14px;

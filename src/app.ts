@@ -71,7 +71,6 @@ app.use(async (req: Request, res: Response) => {
         res.status(500).render('error');
     }
 });
-
 const start = () => {
     app.listen((process.env.PORT as any) || 4300, process.env.HOST || "localhost", () => {
         console.log(`Сервер запустился на: http://${process.env.HOST}:${ process.env.PORT }`);

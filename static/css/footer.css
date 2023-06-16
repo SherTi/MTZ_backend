@@ -183,11 +183,6 @@
         display: flex;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
-    .nav-block1{
-        padding: 25px 30px 26px 30px;
-        background: #ffffff;
-        width: 340px;
-    }
     .nav-left-panel li {
         margin: 25px 0;
     }
