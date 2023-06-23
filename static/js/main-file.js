@@ -8,14 +8,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
             breakpoints: {
                 2556:{
                     slidesPerGroup:1,
-                    slidesPerView: 11,
+                    slidesPerView: 7,
                     loop: true,
                     freeMode:true,
                     speed:8000,
                 },
                 1920:{
                     slidesPerGroup: 2,
-                    slidesPerView: 11,
+                    slidesPerView: 6,
                     loop: true,
                     freeMode:true,
                     speed:8000,
@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     slidesPerGroup: 1,
                     loop: true,
                     freeMode:true,
-                    speed:8000,
+                    speed:800,
                 },
                 425:{
                     slidesPerView:5,

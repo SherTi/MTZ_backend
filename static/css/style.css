@@ -1214,7 +1214,11 @@
         padding-top: 100px;
     }
 }
-
+@media (max-width: 1920px) {
+    .patner-main-item{
+        margin-top: -390px;
+    }
+}
 @media (max-width: 1810px) {
     .container{
         padding: 0 calc((100% - 1390px )/2);
