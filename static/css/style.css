@@ -295,6 +295,7 @@
     width: 500px;
     height: 100%;
     object-fit: cover;
+    border-radius: 32px;
 }
 .f-f-card:hover .f-f-img{
     transform: scale(1.1);
@@ -1050,13 +1051,14 @@
     object-fit: contain;
 }
 .info_add_block{
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-end;
     position: fixed;
     z-index: 105;
     bottom: 15%;
     right: 180px;
+
 }
 .info_title{
     opacity: 0;
@@ -1169,6 +1171,76 @@
     width: 180px;
     height: 180px;
     object-fit: contain;
+}
+.a-c-c-map-img{
+    position: relative;
+}
+.town_block{
+    position: absolute;
+    top: 140px;
+    right: 28px;
+}
+.position_1{
+    top: 186px;
+    right: -50px;
+}
+.position_2{
+    top: 170px;
+    right: 187px;
+}
+.position_3{
+    top: 66px;
+    right: 275px;
+}
+.position_4{
+    top: auto;
+    bottom: 44px;
+    right: 147px;
+}
+.position_5{
+    top: 192px;
+    right: 365px;
+}
+.position_6{
+    right: auto;
+    left: 124px;
+    top: 86px;
+}
+.town_dot{
+    width: 20px;
+    height: 20px;
+    background: #D9D9D9;
+    border: 4px solid #0061E7;
+    border-radius: 50%;
+    box-shadow: 0 4px 4px 0 #0061E7B2;
+}
+.town_name{
+    width: 53px;
+    padding: 8px 0;
+    border-radius: 4px;
+    background: #0061E7;
+    font-size: 7px;
+    font-weight: 400;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 9px;
+    margin-bottom: 31px;
+    transform: translateY(-50%);
+}
+.town_block:hover .border{
+    opacity: 1;
+}
+.border{
+    border-top: 1px solid #0061E7;
+    height: 30px;
+    width: 61px;
+    border-left:1px solid #0061E7 ;
+    margin-left: 10px;
+    margin-bottom: -1px;
+    opacity: 0;
+    transition: all .3s;
 }
 @media (max-width: 2885px) {
     .info_container{
