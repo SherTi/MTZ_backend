@@ -248,23 +248,44 @@ header{
     left: 0;
     background: rgba(34, 34, 34, 0.5);
 }
+@media (max-width: 2885px) {
+    .container{
+        padding: 0 calc((100% - 1768px) / 2 );
+    }
+}
+@media (max-width: 1810px) {
+    .container{
+        padding: 0 calc((100% - 1390px )/2);
+    }
+}
+@media (max-width: 1440px) {
+    .container{
+        padding: 0 calc((100% - 1300px )/2);
+    }
+}
+@media (max-width: 1350px) {
+    .container{
+        padding: 0 calc((100% - 1015px) / 2 );
+    }
+}
+@media (max-width: 1040px) {
+    .container{
+        padding: 0 calc((100% - 1000px)/ 2);
+    }
+}
 @media (max-width: 1024px) {
     .container {
-        padding: 0 25px;
+        padding: 0 calc((100% - 800px) / 2);
     }
-
     .n-mob_t {
         display: none;
     }
-
     .nav-down {
         display: none;
     }
-
     .nav-panel-main {
         margin-left: 20px;
     }
-
     .btn_nav_panel {
         padding: 6px;
         border-radius: 8px;
@@ -273,43 +294,72 @@ header{
         align-items: center;
         border: 1px solid #0061E7;
     }
-
     .header {
         height: 85px;
     }
-
     .logo {
         height: 100%;
     }
-
     .logo_img {
         width: 100px;
         height: 100px;
     }
-
     .nav-up {
         justify-content: normal;
         margin-bottom: 0;
     }
-
-    .title-text {
-        font-size: 50px;
-        width: 100%;
-    }
-
     .nav-b {
         margin-left: 36px;
     }
 }
-@media (max-width: 425px) {
+@media (max-width: 840px) {
     .container{
-        padding: 0 25px;
+        padding: 0 calc((100% - 700px) /2);
+    }
+}
+@media (max-width: 768px) {
+    .container{
+        padding: 0 calc((100% - 650px) /2);
+    }
+}
+@media(max-width: 770px) {
+    .nav-l{
+        font-size: 12px;
     }
     .nav-t{
-        display: none;
+        font-size: 10px;
+    }
+    .mar_t{
+        margin-top: 3px;
+        line-height: revert;
+    }
+    .mar_b{
+        line-height: revert;
+        margin-bottom: 3px;
+    }
+    .rou::after{
+        bottom: -20%;
+    }
+    .eclipse::after{
+        top: -20%;
+    }
+}
+@media (max-width: 700px) {
+    .container{
+        padding: 0 calc((100% - 550px) /2);
     }
     .nav-b{
         display: none;
+    }
+}
+@media (max-width: 560px) {
+    .container{
+        padding: 0 calc((100% - 500px) /2);
+    }
+}
+@media (max-width: 520px) {
+    .container{
+        padding: 0 25px;
     }
     .logo{
         width: 100%;

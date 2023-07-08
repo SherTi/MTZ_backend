@@ -2,42 +2,42 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if ( new Swiper('partner_swiper')){
         const partner_swiper = new Swiper('.partner_swiper',{
             direction: 'horizontal',
-            margin: 30,
-            autoplay: true,
-
+            loop: true,
+            freeMode:true,
             breakpoints: {
-                2556:{
-                    slidesPerGroup:1,
-                    slidesPerView: 7,
-                    loop: true,
-                    freeMode:true,
-                    speed:8000,
-                },
-                1920:{
-                    slidesPerGroup: 2,
-                    slidesPerView: 6,
-                    loop: true,
-                    freeMode:true,
-                    speed:8000,
-                },
-                1080:{
-                    slidesPerView: 6,
-                    slidesPerGroup: 1,
-                    loop: true,
-                    freeMode:true,
-                    speed:800,
-                },
-                425:{
-                    slidesPerView:5,
-                    slidesPerGroup:1,
+                320:{
+                    slidesPerView:2,
                 },
                 375:{
-                    slidesPerView:5,
-                    slidesPerGroup:1,
+                    slidesPerView:2,
                 },
-                320:{
-                    slidesPerView:5,
-                    slidesPerGroup:1,
+                425:{
+                    slidesPerView:2,
+                },
+                525:{
+                    slidesPerView:3,
+                },
+                990:{
+                    slidesPerView: 4,
+                },
+                1024:{
+                    slidesPerView: 4,
+                },
+                1020:{
+                    slidesPerView: 4,
+                },
+                1080:{
+                    slidesPerView: 5,
+                },
+                1630:{
+                    slidesPerView: 5,
+                },
+                1920:{
+                    slidesPerView: 6,
+                    speed:8000,
+                },
+                2556:{
+                    slidesPerView: 7,
                 }
             }
 
@@ -213,7 +213,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if (bg){
         bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
         window.addEventListener('resize', () => {
-            if (bg.clientWidth > 768) {
+            if (bg.clientWidth > 972) {
                 bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
             } else {
                 bg.style.height = '';
