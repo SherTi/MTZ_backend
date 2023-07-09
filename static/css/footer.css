@@ -131,7 +131,7 @@
     display: flex;
     justify-content: end;
 }
-@media (max-width: 768px) {
+@media (max-width: 1350px) {
     .tablet_footer{
         flex-direction: column;
         display: flex;
@@ -143,10 +143,15 @@
         width: 100%;
     }
     .mar-r-120{
-        margin-left: 120px;
+        margin-left: 0;
+        width: 40%;
     }
     .mar-t-70{
         margin-top: 70px;
+    }
+    .f-block-b{
+        justify-content: space-between;
+        width: 100%;
     }
     .f-sec-b{
         width: 100%;
@@ -155,8 +160,9 @@
         margin-top: 84px;
     }
     .mar-r-95{
-        margin-left: 95px   ;
+        margin-left: 0;
         text-align: center;
+        width: 40%;
     }
     .f-text-con{
         display: flex;
