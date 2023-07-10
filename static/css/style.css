@@ -1055,14 +1055,13 @@
     object-fit: contain;
 }
 .info_add_block{
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: flex-end;
     position: fixed;
     z-index: 105;
     bottom: 15%;
     right: 180px;
-
 }
 .info_title{
     opacity: 0;
