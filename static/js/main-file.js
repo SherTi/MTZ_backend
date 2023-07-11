@@ -116,21 +116,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const icon = document.querySelectorAll('.icon-nav_item')
         stroke.forEach((stroke) => {
             stroke.addEventListener('click' ,(event) =>{
-                stroke = !stroke
                 navCatalog.classList.toggle('active_stroke')
-                icon.forEach((icon) =>{
+                stroke = !stroke
+                 icon.forEach((icon) =>  {
                     if (stroke){
                         icon.style.transform = 'rotate(0deg)'
-                        console.log(icon)
                     } else if(!stroke){
                         icon.style.transform = 'rotate(180deg)'
-                        console.log(icon)
                     }
                 })
+            })
         })
-
-    })
-
     let btn_menu = document.querySelector('.btn_nav_panel')
     let menu_body = document.querySelector('.background_r-nav-menu')
     if(btn_menu){
