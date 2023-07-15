@@ -109,6 +109,9 @@
 }
 .tractors{
     width: 275px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .tractors_name{
     font-size: 16px;
@@ -1258,6 +1261,25 @@
     opacity: 0;
     transition: all .3s;
 }
+.nav-catalog{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #ffffff;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+.nav_catalog_list{
+    display: flex;
+    flex-direction: column;
+}
+.tablet_version_nav{
+    display: none;
+}
+.nav_catalog_bnt{
+    width: 100%;
+}
 @media (max-width: 2885px) {
     .info_container{
         padding: 50px 80px;
@@ -1407,6 +1429,9 @@
     .p-nav-btn{
         padding: 20px 18px;
         font-size: 16px;
+    }
+    .nav-element-l{
+        margin: 25px 0;
     }
 }
 @media (max-width: 1280px) {
@@ -1855,7 +1880,7 @@
         background: #ffffff;
         width: 340px;
     }
-    .nav-left-panel li {
+    .nav-element-l{
         margin: 25px 0;
     }
     .title-nav-left p{
@@ -2032,6 +2057,27 @@
     }
     .activity-area{
         display: none;
+    }
+}
+@media(max-width: 676px){
+    .pc_version_nav{
+        display: none;
+    }
+    .tablet_version_nav{
+        display: flex;
+        flex-direction: column;
+        padding: 20px ;
+    }
+    .tractors{
+        max-height:0;
+        overflow: hidden;
+        margin: 15px 0;
+    }
+    .tractors{
+        width: 100%;
+    }
+    .img-item-n{
+        width: 275px;
     }
 }
 @media (max-width: 580px) {
@@ -2429,9 +2475,6 @@
     .nav-block2{
         width: 50%;
         padding: 30px 5px;
-    }
-    .img-item-n {
-        width: 72%;
     }
     .search-input-block{
         max-width: 36px;

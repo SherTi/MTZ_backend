@@ -112,21 +112,42 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 
     let navCatalog = document.querySelector('.nav-block2')
-    let stroke = document.querySelectorAll('.stroke-nav')
-    const icon = document.querySelectorAll('.icon-nav_item')
-        stroke.forEach((stroke) => {
-            stroke.addEventListener('click' ,(event) =>{
-                navCatalog.classList.toggle('active_stroke')
-                stroke = !stroke
-                 icon.forEach((icon) =>  {
-                    if (stroke){
-                        icon.style.transform = 'rotate(0deg)'
-                    } else if(!stroke){
-                        icon.style.transform = 'rotate(180deg)'
-                    }
-                })
-            })
+    const strokes = document.querySelectorAll('.stroke-nav')
+    const icons = document.querySelectorAll('.icon-nav_item')
+
+
+
+     icons.forEach((el) => {
+         let icon = el
+         function icons_anim (event) {
+
+         }
+         icon.addEventListener('click', icons_anim)
+     })
+
+    // icons.forEach((icon) =>  {
+    //     event.preventDefault()
+    //     if (icon){
+    //         icon.style.transform = 'rotate(0deg)'}
+    //     else if(!stroke){
+    //         icon.style.transform = 'rotate(180deg)'}
+    //
+    // })
+        strokes.forEach((stroke) => {
+           stroke.addEventListener('click' , (event) => {
+               stroke = !stroke
+               if (stroke) {
+                   navCatalog.classList.add('active_stroke')
+               } else if(!stroke){
+                   navCatalog.classList.remove('active_stroke')
+               }
+           })
         })
+
+
+
+
+
     let btn_menu = document.querySelector('.btn_nav_panel')
     let menu_body = document.querySelector('.background_r-nav-menu')
     if(btn_menu){
@@ -223,16 +244,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const bg = document.querySelector('.background')
 
-    if (bg){
-        bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-        window.addEventListener('resize', () => {
-            if (bg.clientWidth > 972) {
-                bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-            } else {
-                bg.style.height = '';
-            }
+    // if (bg){
+    //     bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+    //     window.addEventListener('resize', () => {
+    //         if (bg.clientWidth > 972) {
+    //             bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+    //         } else {
+    //             bg.style.height = '';
+    //         }
+    //
+    //     });
+    // }
 
-        });
-    }
+    const nav_catalogs = document.querySelectorAll('.nav_catalog_bnt')
+    nav_catalogs.forEach((el) => {
+        el.addEventListener('click' , () => {
+            let nav_catalog = el.nextElementSibling;
+            if (nav_catalog.style.maxHeight) {
+                document.querySelectorAll('.tractors').forEach((el) => el.style.maxHeight = null)
+            } else {
+                document.querySelectorAll('.tractors').forEach((el) => el.style.maxHeight = null)
+                nav_catalog.style.maxHeight = nav_catalog.scrollHeight + 'px'
+            }
+        })
+    })
 
 });

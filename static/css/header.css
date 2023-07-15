@@ -196,10 +196,10 @@ header{
 .nav-block2{
     background: #ffffff;
 }
-.nav-left-panel li{
+.nav-element-l{
     margin: 35px 0;
 }
-.nav-left-panel li span{
+.text-nav{
     font-size: 16px;
     font-style: normal;
 }
@@ -218,11 +218,11 @@ header{
     display: flex;
     align-items: center;
 }
-.nav-element-l span{
+.text-nav{
     width: 100%;
     cursor: pointer;
 }
-.nav-element-l button{
+.nav-btn_item{
     background: transparent;
     text-align: left;
     width: 285px;
@@ -378,7 +378,7 @@ header{
     .nav-up{
         justify-content: start;
     }
-    nav-left-panel li span{
+    .text-nav{
         font-size: 14px;
         font-style: normal;
     }

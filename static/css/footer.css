@@ -189,9 +189,6 @@
         display: flex;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
-    .nav-left-panel li {
-        margin: 25px 0;
-    }
     .title-nav-left p{
         margin-bottom: 35px;
     }
