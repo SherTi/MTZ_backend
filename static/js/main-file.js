@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     if ( new Swiper('partner_swiper')){
         const partner_swiper = new Swiper('.partner_swiper',{
             direction: 'horizontal',
@@ -93,13 +93,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         }
     });
-    const nav = document.querySelector('.catalog-btn')
+
+
+    const nav_bnt = document.querySelector('.catalog-btn')
     const menu = document.querySelector('.container-nav')
-    if (nav) {
-        nav.addEventListener('click' , (event) =>{
+    const menu_tablet = document.querySelector('.tablet_version_nav')
+    const close_nav_list = document.querySelector('.close_window')
+
+    if (nav_bnt) {
+        nav_bnt.addEventListener('click' , (event) =>{
             event.preventDefault()
             menu.classList.add('active')
             document.body.style.overflow = 'hidden'
+            menu_tablet.classList.add('active_tablet')
         })
     }
     if(menu){
@@ -110,7 +116,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }
         })
     }
-
+    if (close_nav_list) {
+        close_nav_list.addEventListener('click', () => {
+            menu_tablet.classList.remove('active_tablet')
+        })
+    }
     let navCatalog = document.querySelector('.nav-block2')
     const strokes = document.querySelectorAll('.stroke-nav')
     const icons = document.querySelectorAll('.icon-nav_item')
@@ -244,17 +254,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     const bg = document.querySelector('.background')
 
-    // if (bg){
-    //     bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-    //     window.addEventListener('resize', () => {
-    //         if (bg.clientWidth > 972) {
-    //             bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-    //         } else {
-    //             bg.style.height = '';
-    //         }
-    //
-    //     });
-    // }
+    if (bg){
+        bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+        window.addEventListener('resize', () => {
+            if (bg.clientWidth > 972) {
+                bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+            } else {
+                bg.style.height = '';
+            }
+
+        });
+    }
 
     const nav_catalogs = document.querySelectorAll('.nav_catalog_bnt')
     nav_catalogs.forEach((el) => {
