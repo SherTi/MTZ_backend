@@ -125,24 +125,13 @@ window.addEventListener('DOMContentLoaded', () => {
     const strokes = document.querySelectorAll('.stroke-nav')
     const icons = document.querySelectorAll('.icon-nav_item')
 
+    icons.forEach((icon) =>  {
+        if (icon){
+            icon.style.transform = 'rotate(0deg)'}
+        else if(!icon){
+            icon.style.transform = 'rotate(180deg)'}
 
-
-     icons.forEach((el) => {
-         let icon = el
-         function icons_anim (event) {
-
-         }
-         icon.addEventListener('click', icons_anim)
-     })
-
-    // icons.forEach((icon) =>  {
-    //     event.preventDefault()
-    //     if (icon){
-    //         icon.style.transform = 'rotate(0deg)'}
-    //     else if(!stroke){
-    //         icon.style.transform = 'rotate(180deg)'}
-    //
-    // })
+    })
         strokes.forEach((stroke) => {
            stroke.addEventListener('click' , (event) => {
                stroke = !stroke

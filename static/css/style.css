@@ -688,6 +688,7 @@
     font-weight: 400;
     font-style: normal;
     color:#9F9F9F;
+    white-space: nowrap;
 }
 .p-b-des-text{
     font-size: 18px;
@@ -1282,6 +1283,14 @@
 }
 .active_tablet{
     display: none;
+}
+.border_under{
+    border-bottom: 1px dashed #9F9F9F;
+    margin: 0 20px;
+    width: 100%;
+}
+.mar_line{
+    margin:0 0 0 20px;
 }
 @media (max-width: 2885px) {
     .info_container{
