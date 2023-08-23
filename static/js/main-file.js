@@ -123,14 +123,24 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     let navCatalog = document.querySelector('.nav-block2')
     const strokes = document.querySelectorAll('.stroke-nav')
+    const catalog_btns = document.querySelectorAll('.nav-btn_item')
     const icons = document.querySelectorAll('.icon-nav_item')
 
-    icons.forEach((icon) =>  {
-        if (icon){
-            icon.style.transform = 'rotate(0deg)'}
-        else if(!icon){
-            icon.style.transform = 'rotate(180deg)'}
 
+    catalog_btns.forEach((el) => {
+        el.addEventListener('click' , (event) => {
+            event.preventDefault()
+            icons.forEach((icon) =>  {
+                console.log(event.onclick)
+                if (el.onclick) {
+                    icon.classList.toggle('active_stroke')
+                }
+                // if (icon){
+                //     icon.style.transform = 'rotate(0deg)'}
+                // else{
+                //     icon.style.transform = 'rotate(180deg)'}
+            })
+        })
     })
         strokes.forEach((stroke) => {
            stroke.addEventListener('click' , (event) => {
