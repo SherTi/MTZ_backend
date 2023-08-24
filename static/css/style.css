@@ -867,9 +867,8 @@
     width: 10px;
     height: 10px;
     margin-left: 20px;
-}
-.stroke-nav:hover .text-nav{
-    color: #387EC1;
+    background: url("../images/arrow_left.png");
+    background-repeat: no-repeat;
 }
 .stroke-nav:hover .icon-nav_item{
     opacity: 1;
@@ -1291,6 +1290,9 @@
 }
 .mar_line{
     margin:0 0 0 20px;
+}
+.active_text{
+    color: #387EC1;
 }
 @media (max-width: 2885px) {
     .info_container{
