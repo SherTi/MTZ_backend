@@ -64,6 +64,14 @@ export class TractorCharacters extends Model<
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
 }
+export class Feedback extends Model<InferAttributes<Feedback>, InferCreationAttributes<Feedback>>{
+    declare id: CreationOptional<number>;
+    declare u_name: string;
+    declare number: string;
+    declare email: string;
+    declare createdAt: CreationOptional<Date>;
+    declare updatedAt: CreationOptional<Date>;
+}
 
 Product.init(
   {
@@ -127,6 +135,18 @@ TractorCharacters.init(
   { tableName: "tractors_characters", sequelize: db },
 );
 
+Feedback.init(
+    {
+      id:{type: DataTypes.INTEGER, allowNull: false, primaryKey: true},
+      u_name:{type: DataTypes.STRING, allowNull: false},
+      number:{type: DataTypes.STRING, allowNull: false},
+      email:{type: DataTypes.STRING, allowNull: false},
+      createdAt: { type: DataTypes.DATE, allowNull: false },
+      updatedAt: { type: DataTypes.DATE, allowNull: false },
+    },
+    { tableName: "feedback", sequelize: db },
+);
+
 Category.hasMany(Product, {
   foreignKey: { name: "category_id", allowNull: false },
 });
@@ -134,3 +154,4 @@ Category.hasMany(Product, {
 Product.belongsTo(Category, {
   foreignKey: { name: "category_id", allowNull: false },
 });
+
