@@ -394,10 +394,6 @@ header{
     .nav-up{
         justify-content: start;
     }
-    .text-nav{
-        font-size: 14px;
-        font-style: normal;
-    }
 }
 @media (max-width: 525px) {
     .r-nav-menu_tablet{
