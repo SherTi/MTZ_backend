@@ -94,6 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const nav_bnt = document.querySelector(".catalog-btn");
+  const tab_menu = document.querySelector(".catalog-btn");
   const menu = document.querySelector(".container-nav");
   const menu_tablet = document.querySelector(".tablet_version_nav");
   const close_nav_list = document.querySelector(".close_window");
@@ -140,7 +141,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let menu_active_btn = document.querySelector(".catalog-btn");
   if (btn_menu) {
     menu_active_btn.addEventListener("click", () => {
-      menu_body.classList.toggle("active_menu");
+      menu_body.classList.add("active_menu");
     });
     btn_menu.addEventListener("click", (event) => {
       event.preventDefault();

@@ -1084,9 +1084,7 @@
 
 /**/
 
-.active_menu{
-    display: flex;
-}
+
 .r-n-block_link{
     width: 100%;
     display: flex;
@@ -1288,6 +1286,9 @@
 }
 .active_text{
     color: #387EC1;
+}
+.background_r-nav-menu{
+    display: none;
 }
 @media (max-width: 2885px) {
     .info_container{
@@ -1889,6 +1890,12 @@
 @media (max-width: 1024px) {
     .a-u-des{
         font-size: 16px;
+    }
+    .container-nav{
+        display: none;
+    }
+    .active_menu{
+        display: flex;
     }
 }
 @media (max-width: 972px) {
@@ -2516,6 +2523,11 @@
     .text-nav{
         font-size: 14px;
         font-style: normal;
+    }
+}
+@media (max-width: 520px) {
+    .catalog-btn-mobi{
+        display: block;
     }
 }
 @media (max-width: 450px) {
