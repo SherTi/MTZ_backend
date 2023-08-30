@@ -94,10 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   const nav_bnt = document.querySelector(".catalog-btn");
-  const tab_menu = document.querySelector(".catalog-btn");
   const menu = document.querySelector(".container-nav");
-  const menu_tablet = document.querySelector(".tablet_version_nav");
-  const close_nav_list = document.querySelector(".close_window");
 
   if (nav_bnt) {
     nav_bnt.addEventListener("click", (event) => {
@@ -112,11 +109,6 @@ window.addEventListener("DOMContentLoaded", () => {
         menu.classList.remove("active");
         document.body.style.overflow = "visible";
       }
-    });
-  }
-  if (close_nav_list) {
-    close_nav_list.addEventListener("click", () => {
-      menu_tablet.classList.remove("active_tablet");
     });
   }
 
@@ -151,6 +143,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (menu_body) {
     menu_body.addEventListener("click", (event) => {
       if (event.target.classList.contains("background_r-nav-menu")) {
+        document.body.style.overflow = "visible";
         menu_body.classList.remove("active_menu");
       }
     });

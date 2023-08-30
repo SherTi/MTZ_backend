@@ -1818,7 +1818,7 @@
         margin-left: 40px;
     }
     .r-n-block_link{
-        display: none;
+        display: flex;
     }
     .swipe_block{
         transform: translateX(0);
@@ -2393,9 +2393,6 @@
     }
     .r-nav-menu{
         width: 100%;
-    }
-    .r-n-block_link{
-        display: flex;
     }
     .modal_block{
         width: 330px;
