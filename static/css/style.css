@@ -386,11 +386,9 @@
 }
 .r-nav-icon{
     margin-left: 18px;
-    background: url("../images/arrow_right.png");
     width: 12px;
     height: 12px;
-    background-repeat: no-repeat;
-    background-size: contain;
+    fill: #222222;
 }
 .b-icon{
     background: url("../images/arrow_left.png");
@@ -1181,8 +1179,18 @@
     object-fit: contain;
 }
 .a-c-c-map-img{
+    position: relative;
+    display: block;
+}
+.town_item_block{
+    position: absolute;
+}
+.town_block_item{
     display: block;
     position: relative;
+    width: 765px;
+    height: 100%;
+    top: -440px;
 }
 .town_block{
     position: absolute;
