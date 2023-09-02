@@ -153,16 +153,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".r-nav-title-btn").forEach((el) => {
     el.addEventListener("click", () => {
+      let icons_btn = el.children[1];
+      let icon = icons_btn.children[0];
       let content = el.nextElementSibling;
       if (content.style.maxHeight) {
         document
           .querySelectorAll(".r-n-block_link")
           .forEach((el) => (el.style.maxHeight = null));
+        icon.style.rotate = "0deg";
       } else {
         document
           .querySelectorAll(".r-n-block_link")
           .forEach((el) => (el.style.maxHeight = null));
         content.style.maxHeight = content.scrollHeight + "px";
+        icon.style.rotate = "180deg";
       }
     });
   });
@@ -180,34 +184,31 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  let icon_btnS = document.querySelectorAll(".r-nav-icon");
-  let btn_change = document.querySelector(".r-nav-title-btn");
-  function changeIconR () {
-    icon_btnS.forEach((el) => {
-      el.innerHTML = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"1em\" viewBox=\"0 0 320 512\"><path d=\"M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z\"/></svg>"
-    })
-  }
-  function changeIconL() {
-    icon_btnS.forEach((el) => {
-      el.innerHTML = "<svg xmlns=\"http://www.w3.org/2000/svg\" height=\"1em\" viewBox=\"0 0 320 512\"><path d=\"M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z\"/></svg>"
-    })
-  }
-  if (btn_change) {
-
-    btn_change.addEventListener("click", (event) => {
-      event.preventDefault()
-      changeIconR()
-    });
-
-
-  } else if(changeIconR()) {
-
-    btn_change.addEventListener("click", (event) => {
-      event.preventDefault()
-      changeIconL()
-    });
-
-  }
+  // let icon_btnS = document.querySelectorAll(".r-nav-icon");
+  // let btn_change = document.querySelector(".r-nav-title-btn");
+  // function changeIconR() {
+  //   icon_btnS.forEach((el) => {
+  //     el.innerHTML =
+  //       '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>';
+  //   });
+  // }
+  // function changeIconL() {
+  //   icon_btnS.forEach((el) => {
+  //     el.innerHTML =
+  //       '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>';
+  //   });
+  // }
+  // if (btn_change) {
+  //   btn_change.addEventListener("click", (event) => {
+  //     event.preventDefault();
+  //     changeIconR();
+  //   });
+  // } else if (changeIconR()) {
+  //   btn_change.addEventListener("click", (event) => {
+  //     event.preventDefault();
+  //     changeIconL();
+  //   });
+  // }
 
   let order_btn = document.querySelector(".p-btn-more-info");
   let order_box = document.querySelector(".modal_container");
