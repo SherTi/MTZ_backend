@@ -1015,6 +1015,7 @@
     position: relative;
     z-index: 5;
     cursor: pointer;
+    pointer-events: all;
 }
 
 .info_title{
@@ -1039,6 +1040,7 @@
     position: relative;
     right: 12px;
     transform: translateY(110%);
+    pointer-events: all;
 }
 .info-icon_block{
     margin-top: 20px;
@@ -1058,6 +1060,7 @@
     z-index: 105;
     bottom: 15%;
     right: 180px;
+    pointer-events: none;
 }
 .info_title{
     opacity: 0;
@@ -1182,46 +1185,37 @@
     position: relative;
     display: block;
 }
-.town_item_block{
-    position: absolute;
-}
-.town_block_item{
-    display: block;
-    position: relative;
-    width: 765px;
-    height: 100%;
-    top: -440px;
-}
 .town_block{
     position: absolute;
-    top: 140px;
-    right: 28px;
+    top: 39.94%;
+    right: 10.43%;
 }
 .position_1{
-    top: 186px;
-    right: -50px;
+    top: 49.75%;
+    right: 1.95%;
 }
 .position_2{
-    top: 170px;
-    right: 187px;
+    top: 46.06%;
+    right: 31.05%;
 }
 .position_3{
-    top: 66px;
-    right: 275px;
+    top: 21.19%;
+    right: 42.66%;
 }
 .position_4{
+    bottom: 10.36%;
+    right: 26.35%;
     top: auto;
-    bottom: 44px;
-    right: 147px;
 }
 .position_5{
-    top: 192px;
-    right: 365px;
+    top: auto;
+    right: 52.7%;
+    bottom: 43.76%;
 }
 .position_6{
     right: auto;
-    left: 124px;
-    top: 86px;
+    left: 16.69%;
+    top: 26.94%;
 }
 .town_dot{
     width: 20px;
@@ -1250,14 +1244,17 @@
     opacity: 1;
 }
 .border{
+    position: absolute;
     border-top: 1px solid #0061E7;
     height: 30px;
     width: 61px;
     border-left:1px solid #0061E7 ;
-    margin-left: 10px;
+    margin-left: 9.5px;
     margin-bottom: -1px;
     opacity: 0;
     transition: all .3s;
+    bottom: 100%;
+    pointer-events: none;
 }
 .nav-catalog{
     position: fixed;
@@ -1396,10 +1393,10 @@
         display: none;
     }
     .a-c-img{
-        margin-right: 150px;
+        margin-right: 110px;
     }
     .a-c-img_item{
-        width: 424px;
+        width: 390px;
         height: 100%;
     }
     .f-f-card{
@@ -1498,12 +1495,8 @@
         justify-content: center;
     }
     .a-c-c-map-item{
-        width: 320px;
-        height: 100%;
+        width: 100%;
         object-fit: contain;
-    }
-    .town_block_item{
-        display: none;
     }
 }
 @media (max-width: 1170px) {
@@ -1904,6 +1897,12 @@
     }
     .active_menu{
         display: flex;
+    }
+    .a-c-img_item{
+        width: 340px;
+    }
+    .a-c-c-map-item{
+        width: 100%;
     }
 }
 @media (max-width: 972px) {
