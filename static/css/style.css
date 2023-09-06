@@ -1,6 +1,3 @@
-html{
-    scroll-behavior: smooth;
-}
 /*main-page-style*/
 .background{
     background-image: url("../images/BG_Photo.jpg");
@@ -659,7 +656,7 @@ html{
 .p-nav-btn-b-radius2{
     border-radius: 0 16px 16px 0;
 }
-.p-nav-btn:focus{
+.p-nav-btn:hover{
     color: #ffffff;
     background: linear-gradient(#2A84FF   0% , #0061E7 100%);
     border-radius: 16px;
@@ -711,6 +708,9 @@ html{
     color: #222222;
 }
 .p-font-wrap {
+    white-space: nowrap;
+}
+.p-font-wrap-1{
     white-space: nowrap;
 }
 .pad-l-r{
@@ -1301,6 +1301,9 @@ html{
 }
 .background_r-nav-menu{
     display: none;
+}
+.btn_block{
+    width: 50%;
 }
 @media (max-width: 2885px) {
     .info_container{
@@ -2021,6 +2024,9 @@ html{
         flex-direction: column;
         align-items: center;
     }
+    .p-font-wrap-1{
+        white-space: normal;
+    }
 }
 @media (max-width:705px ) {
     .about-us-team{
@@ -2068,6 +2074,16 @@ html{
     }
     .c-c-block{
         padding-left: 0;
+    }
+    .p-nav-btn{
+        padding: 20px 13px;
+    }
+    .p-font-wrap{
+        white-space: normal;
+        text-align: right;
+    }
+    .p-ul-des-text{
+        text-align: left;
     }
 }
 @media (max-width: 690px) {

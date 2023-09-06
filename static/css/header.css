@@ -1,6 +1,3 @@
-@import url('/fonts/lato/lato.css');
-@import url('/fonts/inter/inter.css');
-
 * {
     box-sizing: border-box;
     -webkit-transition: all .3s;
@@ -8,7 +5,9 @@
     -moz-transition: all .3s;
     -o-transition: all .3s;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;

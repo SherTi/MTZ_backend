@@ -144,14 +144,18 @@ window.addEventListener("DOMContentLoaded", () => {
     btn_menu.addEventListener("click", (event) => {
       event.preventDefault();
       menu_body.classList.toggle("active_menu");
-      document.body.style.overflow = "hidden";
+      if (menu_body.classList.contains("active_menu")){
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
     });
   }
   if (menu_body) {
     menu_body.addEventListener("click", (event) => {
       if (event.target.classList.contains("background_r-nav-menu")) {
-        document.body.style.overflow = "visible";
         menu_body.classList.remove("active_menu");
+        document.body.style.overflow = "visible";
       }
     });
   }
