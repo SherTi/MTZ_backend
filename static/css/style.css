@@ -1,4 +1,6 @@
-
+html{
+    scroll-behavior: smooth;
+}
 /*main-page-style*/
 .background{
     background-image: url("../images/BG_Photo.jpg");
@@ -705,8 +707,11 @@
     width: 100%;
     border-bottom: 1px dotted #9F9F9F;
 }
-.p-font-wight{
+.p-font-wight {
     color: #222222;
+}
+.p-font-wrap {
+    white-space: nowrap;
 }
 .pad-l-r{
     padding: 20px 50px;
