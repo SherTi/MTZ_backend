@@ -119,6 +119,10 @@
     text-align: center;
     margin-top: 20px;
 }
+.partner_swiper{
+    overflow-x: hidden;
+    max-width: 100%;
+}
 .mar-15{
     margin-left: 0;
     margin-right: 30px;
@@ -544,6 +548,27 @@
 .slider-dots-active{
     background: #0061E7;
 }
+.cer-01-img{
+    width: 230px;
+    height: 326px;
+    object-fit: contain;
+}
+.ser_container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    background: rgba(0, 0, 0, 0.5);
+}
+.cer-big-img{
+    height: 90%;
+}
 /*about-us-page-style*/
 
 /*property-tractor*/
@@ -638,23 +663,19 @@
 .p-nav-panel{
     display: flex;
     margin-bottom: 30px;
+    background: #ffffff;
+    border-radius: 16px;
 }
 .p-nav-btn{
     width: 100%;
     font-size: 18px;
     line-height: 22px;
     padding: 20px 95px;
-    background: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.p-nav-btn-b-radius{
-    border-radius: 16px 0 0 16px ;
-}
-.p-nav-btn-b-radius2{
-    border-radius: 0 16px 16px 0;
+    border-radius: 16px;
 }
 .p-nav-btn:hover{
     color: #ffffff;
@@ -1047,7 +1068,7 @@
     position: relative;
     right: 12px;
     transform: translateY(110%);
-    pointer-events: all;
+    pointer-events: none;
 }
 .info-icon_block{
     margin-top: 20px;
@@ -1065,7 +1086,7 @@
     align-items: flex-end;
     position: fixed;
     z-index: 105;
-    bottom: 15%;
+    bottom: 4%;
     right: 180px;
     pointer-events: none;
 }
@@ -1078,6 +1099,7 @@
 .info_active_block{
     opacity: 1;
     transform: translateY(0%);
+    pointer-events: all;
 }
 .info_container{
     display: flex;
@@ -1546,7 +1568,7 @@
         height: 103px;
     }
     .icon-item-p{
-        width: 285px;
+        width: 110px;
         height: 100%;
     }
     .title-text {
@@ -1705,6 +1727,7 @@
     .cer-01-img{
         width: 140px;
         height: 200px;
+        object-fit: contain;
     }
     .nav-btn{
         top: 37%;
@@ -2078,12 +2101,12 @@
     .p-nav-btn{
         padding: 20px 13px;
     }
+    .p-ul-des-text{
+        text-align: left;
+    }
     .p-font-wrap{
         white-space: normal;
         text-align: right;
-    }
-    .p-ul-des-text{
-        text-align: left;
     }
 }
 @media (max-width: 690px) {
@@ -2135,6 +2158,12 @@
 @media (max-width: 560px) {
     .a-u-img-item-block{
         width: 64%;
+    }
+    .a-c-img{
+        margin-right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 @media (max-width: 525px) {
@@ -2593,6 +2622,9 @@
     }
     .about-us-team-mini{
         width: 100px;
+    }
+    .a-c-img_item{
+        width: 100%;
     }
 }
 @media (max-width: 350px) {

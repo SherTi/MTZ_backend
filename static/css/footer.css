@@ -117,10 +117,6 @@
     width: 63%;
     justify-content: space-between;
 }
-.partner_swiper{
-    overflow: hidden;
-    user-select: none;
-}
 .tablet_footer{
     display: none;
 }

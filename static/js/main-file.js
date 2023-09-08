@@ -1,12 +1,13 @@
 window.addEventListener("DOMContentLoaded", () => {
   if (new Swiper("partner_swiper")) {
     const partner_swiper = new Swiper(".partner_swiper", {
-      direction: "horizontal",
+      direction: 'horizontal',
       autoplay: {
         delay: 100,
       },
-      loop: true,
       freeMode: true,
+      speed: 3000,
+      loop: true,
       breakpoints: {
         320: {
           slidesPerView: 2,
@@ -37,7 +38,6 @@ window.addEventListener("DOMContentLoaded", () => {
         },
         1920: {
           slidesPerView: 6,
-          speed: 8000,
         },
         2556: {
           slidesPerView: 7,
@@ -260,4 +260,16 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  const ser_big = document.querySelectorAll(".cer-block");
+  const ser_big_banner = document.querySelector(".ser_container");
+  ser_big.forEach((el) => {
+    el.addEventListener('click' , (event) => {
+      event.preventDefault()
+      ser_big_banner.style.display = "inline-flex"
+      ser_big_banner.addEventListener("click" , (event) => {
+        ser_big_banner.style.display = "none"
+      })
+    })
+  })
+
 });
