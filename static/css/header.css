@@ -53,7 +53,7 @@ input{
     border: none;
 }
 .container{
-    padding: 0 calc((100% - 1441px )/2);
+    padding: 0 calc((100% - 1440px )/2);
 }
 header{
     width: 100%;
@@ -123,8 +123,11 @@ header{
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #60D669;
+    background: #36FF5B;
+    animation-name: flashing;
+    animation-duration: 0.5s;
     position: absolute;
+    animation-iteration-count: infinite;
 }
 .eclipse::after{
     content: "";
@@ -135,8 +138,11 @@ header{
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #60D669;
+    background: #36FF5B;
     position: absolute;
+    animation-name: flashing;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
 }
 .eclipse{
     position: relative;
@@ -256,9 +262,15 @@ header{
 .active_list{
     transform: translateX(0);
 }
+@keyframes flashing {
+    0%   {background: #36FF5B}
+    50%  {background: #ffffff}
+    100% {background: #36FF5B}
+    
+}
 @media (max-width: 2885px) {
     .container{
-        padding: 0 calc((100% - 1768px) / 2 );
+        padding: 0 calc((100% - 1440px) / 2 );
     }
 }
 @media (max-width: 1810px) {

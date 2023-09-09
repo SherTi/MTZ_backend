@@ -2,45 +2,47 @@ window.addEventListener("DOMContentLoaded", () => {
   if (new Swiper("partner_swiper")) {
     const partner_swiper = new Swiper(".partner_swiper", {
       direction: 'horizontal',
-      autoplay: {
-        delay: 100,
-      },
       freeMode: true,
-      speed: 3000,
+      autoplay: {
+        delay: 1,
+        disableOnInteraction: false,
+      },
       loop: true,
+      rewind: true,
+      speed: 5000,
       breakpoints: {
-        320: {
-          slidesPerView: 2,
+        2556: {
+          slidesPerView: 7,
         },
-        375: {
-          slidesPerView: 2,
+        1920: {
+          slidesPerView: 6,
         },
-        425: {
-          slidesPerView: 2,
+        1630: {
+          slidesPerView: 5,
         },
-        525: {
-          slidesPerView: 3,
+        1080: {
+          slidesPerView: 5,
         },
-        990: {
+        1020: {
           slidesPerView: 4,
         },
         1024: {
           slidesPerView: 4,
         },
-        1020: {
+        990: {
           slidesPerView: 4,
         },
-        1080: {
-          slidesPerView: 5,
+        525: {
+          slidesPerView: 3,
         },
-        1630: {
-          slidesPerView: 5,
+        425: {
+          slidesPerView: 2,
         },
-        1920: {
-          slidesPerView: 6,
+        375: {
+          slidesPerView: 2,
         },
-        2556: {
-          slidesPerView: 7,
+        320: {
+          slidesPerView: 2,
         },
       },
     });

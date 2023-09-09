@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Buyan';
+    src: url("../fonts/Buyan/BUYAN REGULAR.TTF");
+}
+
+
 /*main-page-style*/
 .background{
     background-image: url("../images/BG_Photo.jpg");
@@ -35,15 +41,15 @@
     padding-bottom: 200px;
 }
 .title-text{
-    font-family:"Bebas Neue Cyrillic",sans-serif;
+    font-family: "Buyan" , sans-serif;
     font-style: normal;
     font-size: 60px;
     text-transform: uppercase;
     width: 70%;
     line-height: 100%;
     margin-bottom: 10px;
-    letter-spacing: 1px;
     font-weight: 400;
+    letter-spacing: 1.2px;
 }
 .title-text span{
     color: #02923A;
@@ -92,7 +98,7 @@
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 40px;
-    padding-left: 222px ;
+    letter-spacing: 0.8px;
 }
 .icon-p-card{
     width: 252px;
@@ -1087,7 +1093,7 @@
     position: fixed;
     z-index: 105;
     bottom: 4%;
-    right: 180px;
+    right: 2%;
     pointer-events: none;
 }
 .info_title{
@@ -1384,9 +1390,6 @@
     }
 }
 @media (max-width: 1440px) {
-    .title-p{
-        padding-left: 62px;
-    }
     .info_container{
         display: none;
     }
@@ -1395,9 +1398,6 @@
     }
     .title-block{
         padding-top: 46px;
-    }
-    .info_add_block{
-        right: 65px;
     }
     .f-f-card{
         width: 370px;
@@ -1661,9 +1661,6 @@
     .p-m-block{
         flex-direction: column;
         align-items: center;
-    }
-    .info_add_block{
-        right: 25px;
     }
     .mar-30{
         margin-right: 20px;
