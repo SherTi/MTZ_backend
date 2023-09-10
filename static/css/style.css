@@ -48,7 +48,7 @@
     width: 70%;
     line-height: 100%;
     margin-bottom: 10px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 1.2px;
 }
 .title-text span{
@@ -909,9 +909,10 @@
 .icon-nav_item{
     width: 10px;
     height: 10px;
-    margin-left: 20px;
-    background: url("../images/arrow_left.png");
-    background-repeat: no-repeat;
+    margin-left: 16px;
+    fill: #387EC1;
+    opacity: 0;
+    transform: translateX(-50%);
 }
 .stroke-nav:hover .icon-nav_item{
     opacity: 1;
@@ -1958,6 +1959,9 @@
         font-size: 16px;
     }
     .container-nav{
+        display: none;
+    }
+    .container-nav_part{
         display: none;
     }
     .active_menu{

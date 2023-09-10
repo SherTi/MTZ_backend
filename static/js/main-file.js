@@ -100,13 +100,29 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const nav_bnt = document.querySelector(".catalog-btn");
   const menu = document.querySelector(".container-nav");
-
+  const nav_bnt_2 = document.querySelector(".under_categories")
+  const nav_btn_part = document.querySelector(".under_categories_2")
+  const menu_part = document.querySelector(".container-nav_part")
   if (nav_bnt) {
     nav_bnt.addEventListener("click", (event) => {
       event.preventDefault();
       menu.classList.add("active");
       document.body.style.overflow = "hidden";
     });
+  }
+  if (nav_bnt_2) {
+    nav_bnt_2.addEventListener("click" , (event) => {
+      event.preventDefault();
+      menu.classList.add("active");
+      document.body.style.overflow = "hidden";
+    })
+  }
+  if (nav_btn_part) {
+    nav_btn_part.addEventListener("click" , (event) => {
+      event.preventDefault();
+      menu_part.classList.add("active")
+      document.body.style.overflow = "hidden";
+    })
   }
   if (menu) {
     menu.addEventListener("click", (event) => {
@@ -116,22 +132,15 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  const strokes = document.querySelectorAll(".stroke-nav");
-  const catalog_btns = document.querySelectorAll(".nav-btn_item");
-  const icons = document.querySelectorAll(".icon-nav_item");
-  const texts = document.querySelectorAll(".text-nav");
-
-  strokes.forEach((stroke) => {
-    stroke.addEventListener("click", (event) => {
-      stroke = !stroke;
-      if (stroke) {
-        navCatalog.classList.add("active_stroke");
-      } else if (!stroke) {
-        navCatalog.classList.remove("active_stroke");
+  if(menu_part) {
+    menu_part.addEventListener("click" , (event) => {
+      if( event.target.classList.contains("nav-left-panel")) {
+        menu_part.classList.remove("active");
+        document.body.style.overflow = "visible"
       }
-    });
-  });
+    })
+  }
+
 
   let btn_menu = document.querySelector(".btn_nav_panel");
   let menu_body = document.querySelector(".background_r-nav-menu");
