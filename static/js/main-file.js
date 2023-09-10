@@ -264,14 +264,16 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   const ser_big = document.querySelectorAll(".cer-block");
   const ser_big_banner = document.querySelector(".ser_container");
-  ser_big.forEach((el) => {
-    el.addEventListener('click' , (event) => {
-      event.preventDefault()
-      ser_big_banner.style.display = "inline-flex"
-      ser_big_banner.addEventListener("click" , (event) => {
-        ser_big_banner.style.display = "none"
+  if (ser_big) {
+    ser_big.forEach((el) => {
+      el.addEventListener('click' , (event) => {
+        event.preventDefault()
+        ser_big_banner.style.display = "inline-flex"
+        ser_big_banner.addEventListener("click" , (event) => {
+          ser_big_banner.style.display = "none"
+        })
       })
     })
-  })
+  }
 
 });

@@ -72,6 +72,7 @@
     position: relative;
     cursor: pointer;
     transition: all .2s;
+    letter-spacing: 1.3px;
 }
 .catalog-btn-link{
     width: 394px;
@@ -145,13 +146,13 @@
     font-weight: bold;
     font-size: 40px;
     line-height: 48px;
-    letter-spacing: 2px;
+    letter-spacing: 0.8px;
     margin-bottom: 8px;
 }
 .s-c-des{
     font-size: 26px;
     font-style: normal;
-    letter-spacing: 1px;
+    letter-spacing: 0.52px;
     color: #2A84FF;
 }
 .c-b-title{
@@ -186,6 +187,7 @@
     line-height: 24px;
     font-weight: 700;
     margin-bottom: 10px;
+    letter-spacing: 0.4px;
 }
 .s-c-card-content{
     padding: 20px 0 30px 30px;
@@ -194,6 +196,7 @@
 .s-c-card-des{
     font-size: 18px;
     line-height: 22px;
+    letter-spacing: 0.36px;
 }
 .s-c-card-img{
     display: flex;
@@ -234,13 +237,14 @@
 .a-c-c-title{
     font-size: 30px;
     line-height: 36px;
-    letter-spacing: 2px;
+    letter-spacing: 0.6px;
 }
 .a-c-c-des{
     font-size: 24px;
     line-height: 24px;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: 0.4px;
 }
 .a-c-c-des span{
     font-weight: 600;
@@ -328,7 +332,7 @@
     color: #ffffff;
     font-weight: 700;
     line-height: 22px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.36px;
     transition:all 3s;
 }
 .p-m-block{
@@ -361,6 +365,7 @@
     font-weight: 700;
     line-height: 24px;
     margin-bottom: 15px;
+    letter-spacing: 0.4px;
 }
 .p-m-des{
     font-style: normal;
@@ -368,6 +373,7 @@
     font-weight: 400;
     line-height: 18px;
     margin-bottom: 12px;
+    letter-spacing: 0.28px;
 }
 .p-m-des span{
     font-weight: 600;
@@ -423,6 +429,7 @@
     color: #9F9F9F;
     cursor: pointer;
     white-space: nowrap;
+    letter-spacing: 0.28px;
 }
 .link-title-pages p:hover{
     color: #0061E7;
@@ -450,6 +457,7 @@
     line-height: 44px;
     font-weight: bold;
     margin-bottom: 24px;
+    letter-spacing: 0.72px;
 }
 .a-u-des span{
     font-weight: 700;
@@ -459,6 +467,7 @@
     font-style: normal;
     line-height: 24px;
     margin-bottom: 20px;
+    letter-spacing: 0.4px;
 }
 .about-us-img-block{
     display: flex;
@@ -500,6 +509,7 @@
     font-size: 16px;
     color: #222222;
     font-weight: 500;
+    letter-spacing: 0.32px;
 }
 .f-w-80{
     width: 80%;
@@ -610,6 +620,7 @@
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 20px;
+    letter-spacing: 0.36px;
 }
 .p-des span{
     font-weight: 600;
@@ -622,6 +633,7 @@
     font-size: 18px;
     font-weight: 400;
     color: #0061E7;
+    letter-spacing: 0.36px;
 }
 .p-btn-more-info{
     width: 232px;
@@ -634,6 +646,7 @@
     padding: 18px 30px;
     margin-top: 30px;
     cursor: pointer;
+    letter-spacing: 0.54px;
 }
 .p-btn-more-info:hover{
     box-shadow:  0 5px  1px #01449F;
@@ -654,6 +667,7 @@
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
+    letter-spacing: 0.42px;
 }
 .p-c-card-text span{
     font-weight: 600;
@@ -682,6 +696,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 16px;
+    letter-spacing: 0.54px;
 }
 .p-nav-btn:hover{
     color: #ffffff;
@@ -702,6 +717,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 24px;
+    letter-spacing: 0.72px;
 }
 .p-ul-des{
     display: flex;
@@ -715,6 +731,7 @@
     font-weight: 400;
     font-style: normal;
     color:#9F9F9F;
+    letter-spacing: 0.54px;
 }
 .p-b-des-text{
     font-size: 18px;
@@ -723,6 +740,7 @@
     font-style: normal;
     margin-bottom: 20px;
     width: 64%;
+    letter-spacing: 0.54px;
 }
 .p-b-des-t-title{
     font-weight: 600;
@@ -755,6 +773,7 @@
     font-weight: 600;
     line-height: 25px;
     font-style: normal;
+    letter-spacing: 0.72px;
 }
 .p-item-block{
     padding-left: 80px;
@@ -940,7 +959,7 @@
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.36px;
     color: #222222;
     margin-bottom: 6px;
 }
@@ -1004,6 +1023,7 @@
     border-radius: 16px;
     padding: 14px 25px;
     font-size: 16px;
+    letter-spacing: 0.48px;
 }
 .search-input-block{
     position: relative;
@@ -1333,6 +1353,9 @@
 .btn_block{
     width: 50%;
 }
+.p-letter{
+    letter-spacing: 0.6px;
+}
 @media (max-width: 2885px) {
     .info_container{
         padding: 50px 80px;
@@ -1444,15 +1467,9 @@
     .desktop{
         display: none;
     }
-    .schema-title-text_block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .s-c-title{
         font-size: 30px;
-        text-align: center;
-        letter-spacing: 0;
+        letter-spacing: 0.6px;
     }
     .p-m-card{
         padding: 20px 12px 20px 20px;
@@ -1574,18 +1591,25 @@
     .title-text {
         font-size: 45px;
         width: 100%;
+        letter-spacing: 1px;
     }
     .s-c-des{
         font-size: 24px;
+        letter-spacing: 0.48px;
     }
     .s-c-card-title{
         font-size: 18px;
+        letter-spacing: 0.36px;
+    }
+    .a-c-c-title{
+        letter-spacing: 1px;
     }
     .catalog-btn{
         width: 334px;
         padding: 28px 82px 28px 34px;
         border-radius: 16px;
         font-size: 22px;
+        letter-spacing: 1.1px;
     }
     .catalog-btn-link{
         width: 334px;
@@ -1593,6 +1617,7 @@
     }
     .s-c-card-des{
         font-size: 14px;
+        letter-spacing: 0.28px;
     }
     .s-c-card-img_item{
         width: 100px;
@@ -1622,6 +1647,7 @@
     }
     .a-c-c-des{
         font-size: 18px;
+        letter-spacing: 0.36px;
     }
     .about-company-area{
         margin-bottom: 70px;
@@ -1637,6 +1663,7 @@
     }
     .f-f-text{
         font-size: 14px;
+        letter-spacing: 0.28px;
     }
     .bg-f-f-card{
         padding: 0 20px 20px 10px;
@@ -1652,7 +1679,7 @@
         margin: 50px 0;
     }
     .schema-title-just{
-        width: 65%;
+        width: 50%;
     }
     .schema-img-item{
         width: 166px;
@@ -1721,6 +1748,9 @@
         flex-direction: column;
         align-items: center;
     }
+    .s-c-title{
+        text-align: center;
+    }
     .cer-01-img{
         width: 140px;
         height: 200px;
@@ -1781,6 +1811,11 @@
     }
     .c-c-icon{
         display: none;
+    }
+    .schema-title-text_block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     /*property-page*/
     .desktop_p-c-card-block{
@@ -2047,6 +2082,10 @@
     .p-font-wrap-1{
         white-space: normal;
     }
+    .title-p{
+        font-size: 30px;
+        letter-spacing: 0.6px;
+    }
 }
 @media (max-width:705px ) {
     .about-us-team{
@@ -2170,6 +2209,9 @@
     .a-u-img-item-block{
         width: 100%;
     }
+    .s-c-title{
+        letter-spacing: 0.48px;
+    }
     .about-us-team-mini{
         width: 130px;
         object-fit: cover;
@@ -2214,6 +2256,7 @@
     .title-text{
         font-size: 36px;
         width: 100%;
+        letter-spacing: 0.596px;
     }
     .d-text{
         width: 100%;
@@ -2238,6 +2281,7 @@
         padding: 0 25px;
         font-size: 24px;
         text-align: center;
+        letter-spacing: 0.48px;
     }
     .s-c-title-block{
         width: 100%;
@@ -2247,11 +2291,11 @@
     }
     .s-c-title{
         font-size: 24px;
-        letter-spacing: 1px;
+        letter-spacing: 0.32px;
         line-height: normal;
     }
     .s-c-des{
-        letter-spacing: 0;
+        letter-spacing: 0.36px;
         font-size: 18px;
     }
     .patner-main-item{
@@ -2267,12 +2311,6 @@
         width: 60px;
         height: 60px;
         object-fit: contain;
-    }
-    .s-c-card-title{
-        font-size: 18px;
-    }
-    .s-c-card-des{
-        font-size: 14px;
     }
     .activity-block{
         display: none;
@@ -2295,7 +2333,7 @@
     }
     .a-c-c-title{
         font-size: 18px;
-        letter-spacing: 1px;
+        letter-spacing: 0.36px;
         text-align: center;
     }
     .a-c-c-des{
@@ -2315,6 +2353,11 @@
     .f-f-text{
         font-size: 14px;
     }
+    .s-c-card-title{
+        font-size: 16px;
+        letter-spacing: 0.336px;
+    }
+
     .bg-f-f-card{
         padding: 0 45px 30px 20px;
     }
