@@ -51,8 +51,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const certificate_slider = new Swiper(".certificate-slider", {
     direction: "horizontal",
-    loop: true,
     effect: "slide",
+    loop:true,
     width: 1200,
     navigation: {
       nextEl: ".right-btn-n",
@@ -65,36 +65,32 @@ window.addEventListener("DOMContentLoaded", () => {
       bulletActiveClass: "slider-dots-active",
       el: "#dots-container",
       bulletClass: "s-dot",
+      slidesPerGroup: 1,
     },
     breakpoints: {
       1920: {
         slidesPerView: 5,
-        width: 1920,
-        loop: true,
+      },
+      1170:{
+        slidesPerView: 4,
       },
       1080: {
         slidesPerView: 4,
         slidesPerGroup: 1,
-        width: 1200,
-        loop: true,
       },
       425: {
         slidesPerView: 4,
-        slidesPerGroup: 1,
         width: 750,
-        loop: true,
       },
       375: {
         slidesPerView: 5,
         slidesPerGroup: 1,
         width: 750,
-        loop: true,
       },
       320: {
         slidesPerView: 5,
         slidesPerGroup: 1,
         width: 750,
-        loop: true,
       },
     },
   });

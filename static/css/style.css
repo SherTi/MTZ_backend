@@ -435,6 +435,7 @@
     cursor: pointer;
     white-space: nowrap;
     letter-spacing: 0.28px;
+    cursor: pointer;
 }
 .link-title-pages p:hover{
     color: #0061E7;
@@ -537,6 +538,12 @@
 .right-btn-n{
     right: -30px;
 }
+.certificate-area-block{
+    padding: 26px 54px 34px 54px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 16px;
+}
 .nav-btn{
     position: absolute;
     width: 40px;
@@ -554,7 +561,7 @@
     display: flex;
     justify-content: center;
     align-items: center ;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 .s-dot{
     width: 30px;
