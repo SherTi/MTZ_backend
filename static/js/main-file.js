@@ -9,13 +9,14 @@ window.addEventListener("DOMContentLoaded", () => {
       },
       loop: true,
       rewind: true,
+      margin: 15,
       speed: 5000,
       breakpoints: {
         2556: {
-          slidesPerView: 7,
+          slidesPerView: 8,
         },
         1920: {
-          slidesPerView: 6,
+          slidesPerView: 7,
         },
         1630: {
           slidesPerView: 5,
