@@ -1,8 +1,13 @@
 @font-face {
     font-family: 'Buyan';
     src: url("../fonts/Buyan/BUYAN REGULAR.TTF");
+    font-weight: 400;
 }
-
+@font-face {
+    font-family: 'Buyan';
+    src: url("../fonts/Buyan/BUYAN-BOLD.TTF");
+    font-weight: 600;
+}
 
 /*main-page-style*/
 .background{
@@ -226,7 +231,7 @@
 }
 .a-c-img{
     width: 50%;
-    margin-right: 235px;
+    margin-right: 175px;
     position: relative;
     height: 100%;
 }
@@ -241,9 +246,9 @@
     letter-spacing: 0.6px;
 }
 .a-c-c-des{
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 400;
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 300;
     font-style: normal;
     letter-spacing: 0.4px;
 }
