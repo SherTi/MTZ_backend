@@ -13,13 +13,13 @@ window.addEventListener("DOMContentLoaded", () => {
       speed: 5000,
       breakpoints: {
         2556: {
-          slidesPerView: 8,
+          slidesPerView: 9,
         },
         1920: {
           slidesPerView: 7,
         },
         1630: {
-          slidesPerView: 5,
+          slidesPerView: 6,
         },
         1080: {
           slidesPerView: 5,
