@@ -242,7 +242,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const bg = document.querySelector(".background");
 
   if (bg) {
-    bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
     window.addEventListener("resize", () => {
       if (bg.clientWidth > 972) {
         bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
