@@ -53,7 +53,6 @@ window.addEventListener("DOMContentLoaded", () => {
     direction: "horizontal",
     effect: "slide",
     loop:true,
-    width: 1200,
     navigation: {
       nextEl: ".right-btn-n",
       prevEl: ".left-btn-n",
@@ -68,29 +67,28 @@ window.addEventListener("DOMContentLoaded", () => {
       slidesPerGroup: 1,
     },
     breakpoints: {
-      1920: {
-        slidesPerView: 5,
-      },
       1170:{
         slidesPerView: 4,
+        spaceBetween: 20,
       },
       1080: {
         slidesPerView: 4,
-        slidesPerGroup: 1,
+      },
+      1024: {
+        spaceBetween: 12,
+      },
+      768:{
+        slidesPerView: 4,
       },
       425: {
-        slidesPerView: 4,
-        width: 750,
+        slidesPerView: 2,
+        spaceBetween:17,
       },
       375: {
-        slidesPerView: 5,
-        slidesPerGroup: 1,
-        width: 750,
+        slidesPerView: 2,
       },
       320: {
-        slidesPerView: 5,
-        slidesPerGroup: 1,
-        width: 750,
+        slidesPerView: 2,
       },
     },
   });
@@ -242,11 +240,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const bg = document.querySelector(".background");
 
   if (bg) {
+    bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
     window.addEventListener("resize", () => {
       if (bg.clientWidth > 972) {
         bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+        console.log('worked')
       } else {
         bg.style.height = "";
+        console.log('not worked')
       }
     });
   }
@@ -268,15 +269,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
   const ser_big = document.querySelectorAll(".cer-block");
-  const ser_big_banner = document.querySelector(".ser_container");
+  const ser_big_banner = document.querySelectorAll(".ser_container");
   if (ser_big) {
-    ser_big.forEach((el) => {
-      el.addEventListener('click' , (event) => {
-        event.preventDefault()
-        ser_big_banner.style.display = "inline-flex"
-        ser_big_banner.addEventListener("click" , (event) => {
-          ser_big_banner.style.display = "none"
+    ser_big.forEach((ser) => {
+      ser.addEventListener('click' , (event) => {
+        ser_big_banner.forEach((el) => {
+          if (ser.id === el.id) {
+             el.style.display = "inline-flex"
+              document.body.style.overflow = "hidden"
+              el.addEventListener('click' , (event) => {
+                el.style.display = "none"
+                document.body.style.overflow = "visible"
+              })
+          } else {
+
+          }
         })
+        event.preventDefault()
       })
     })
   }
