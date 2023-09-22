@@ -533,10 +533,10 @@
     justify-content: center;
 }
 .left-btn-n{
-    left: -20px;
+    left: -2.04%;
 }
 .right-btn-n{
-    right: -30px;
+    right: -2.04%;
 }
 .certificate-area-block{
     padding: 26px 54px 34px 54px;
@@ -553,7 +553,7 @@
     align-items: center;
     background: #ffffff;
     box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.5);
-    top: 43%;
+    top: 40%;
     z-index: 99;
     border-radius: 12px;
 }
@@ -1771,9 +1771,6 @@
     .nav-btn{
         top: 37%;
     }
-    .right-btn-n{
-        right: -20px;
-    }
     .special-conditions-area{
         margin-bottom: 50px;
     }
@@ -2677,6 +2674,10 @@
     .p-ul-des-text{
         font-size: 12px;
     }
+    .cer-01-img{
+        width: 115px;
+        height: 186px;
+    }
 }
 @media (max-width: 375px) {
     .title-text{
@@ -2703,16 +2704,6 @@
     .certificate-area-block{
         padding: 10px 17px 10px 18px;
     }
-    .cer-01-img{
-        width: 115px;
-        height: 186px;
-    }
-    .left-btn-n {
-        left: -10px;
-    }
-    .right-btn-n {
-        right: -5px;
-    }
 }
 @media (max-width: 350px) {
 
@@ -2735,5 +2726,9 @@
     }
     .about-us-team-mini{
         width: 80px;
+    }
+    .cer-01-img{
+        width: 105px;
+        height: 176px;
     }
 }

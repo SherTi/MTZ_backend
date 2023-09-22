@@ -78,7 +78,8 @@ window.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 12,
       },
       768:{
-        slidesPerView: 4,
+        slidesPerView: 3.8,
+        spaceBetween: 40,
       },
       425: {
         slidesPerView: 2,
@@ -240,12 +241,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const bg = document.querySelector(".background");
 
   if (bg) {
-    bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
     window.addEventListener("resize", () => {
       if (bg.clientWidth > 972) {
         bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
         console.log('worked')
-      } else {
+      } else if(bg.clientWidth < 972)  {
         bg.style.height = "";
         console.log('not worked')
       }
