@@ -13,15 +13,25 @@ export class Product extends Model<
   InferCreationAttributes<Product>
 > {
   declare id: CreationOptional<number>;
+  declare category: boolean;
   declare name: string;
-  declare img: string;
   declare desc: string;
-  declare tractor: boolean;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
   declare category_id: ForeignKey<Category["id"]>;
+  declare img_id: ForeignKey<Gallery["link"]>;
+  declare characters_id : ForeignKey<Characters["id"]>;
 }
-
+export class Gallery extends Model<InferAttributes<Gallery>, InferCreationAttributes<Gallery>
+> {
+ declare id: CreationOptional<number>;
+ declare size: string;
+ declare height: string;
+ declare width: string;
+ declare link: string;
+ declare createdAt: CreationOptional<Date>;
+ declare updatedAt: CreationOptional<Date>;
+}
 export class Category extends Model<
   InferAttributes<Category>,
   InferCreationAttributes<Category>
@@ -48,21 +58,9 @@ export class Certificate extends Model<
   InferCreationAttributes<Certificate>
 > {
   declare id: CreationOptional<number>;
-  declare img: string;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
-}
-
-export class TractorCharacters extends Model<
-  InferAttributes<TractorCharacters>,
-  InferCreationAttributes<TractorCharacters>
-> {
-  declare id: CreationOptional<number>;
-  declare name: string;
-  declare key: string;
-  declare value: string;
-  declare createdAt: CreationOptional<Date>;
-  declare updatedAt: CreationOptional<Date>;
+  declare img_id: ForeignKey<Gallery['link']>;
 }
 export class Feedback extends Model<InferAttributes<Feedback>, InferCreationAttributes<Feedback>>{
     declare id: CreationOptional<number>;
@@ -83,15 +81,24 @@ Product.init(
       unique: true,
     },
     name: { type: DataTypes.STRING, allowNull: false },
-    img: { type: DataTypes.STRING, allowNull: false },
     desc: { type: DataTypes.STRING, allowNull: false },
-    tractor: { type: DataTypes.BOOLEAN, allowNull: false },
+    category: { type: DataTypes.BOOLEAN, allowNull: false },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },
   { tableName: "products", sequelize: db },
 );
-
+Gallery.init({
+    id: {type: DataTypes.INTEGER, allowNull: false},
+    height: {type: DataTypes.STRING, allowNull: false},
+    width: {type: DataTypes.STRING, allowNull: false},
+    size: {type: DataTypes.STRING, allowNull: false},
+    link: {type: DataTypes.STRING, allowNull: false, primaryKey: true},
+    createdAt: {type: DataTypes.DATE, allowNull: false},
+    updatedAt: {type: DataTypes.DATE, allowNull: false},
+    },
+    {tableName: "gallery" , sequelize: db},
+    )
 Category.init(
   {
     id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
@@ -116,23 +123,10 @@ Characters.init(
 Certificate.init(
   {
     id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
-    img: { type: DataTypes.STRING, allowNull: false },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },
   { tableName: "certificates", sequelize: db },
-);
-
-TractorCharacters.init(
-  {
-    id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
-    name: { type: DataTypes.STRING, allowNull: false },
-    key: { type: DataTypes.STRING, allowNull: false },
-    value: { type: DataTypes.STRING, allowNull: false },
-    createdAt: { type: DataTypes.DATE, allowNull: false },
-    updatedAt: { type: DataTypes.DATE, allowNull: false },
-  },
-  { tableName: "tractors_characters", sequelize: db },
 );
 
 Feedback.init(
@@ -150,8 +144,21 @@ Feedback.init(
 Category.hasMany(Product, {
   foreignKey: { name: "category_id", allowNull: false },
 });
-
+Gallery.hasMany(Product, {
+    foreignKey: {name: "img_id", allowNull: false},
+})
+Characters.hasMany(Characters, {
+    foreignKey: {name: "characters_id" , allowNull: false}
+})
 Product.belongsTo(Category, {
   foreignKey: { name: "category_id", allowNull: false },
 });
-
+Product.belongsTo(Gallery,{
+    foreignKey: {name: "img_id", allowNull:false},
+})
+Product.belongsTo(Characters, {
+    foreignKey: {name: "characters_id", allowNull: false},
+})
+Certificate.belongsTo(Gallery, {
+    foreignKey: {name: "img_id", allowNull: false}
+})
