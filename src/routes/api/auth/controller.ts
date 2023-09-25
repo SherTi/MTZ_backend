@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 
-export class RouterController {
+export class AuthController {
   async singIn(req: Request, res: Response) {
     try {
       const { login, password } = req.body;

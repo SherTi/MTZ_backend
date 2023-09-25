@@ -5,7 +5,7 @@ import productRoutes from "./product/routes";
 
 const router = Router();
 router.use("/auth", authRoutes);
-router.use(checkAuth);
+router.use(checkAuth(false));
 router.use("/product", productRoutes);
 
 export default router;

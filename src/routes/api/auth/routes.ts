@@ -1,8 +1,10 @@
 import { Router } from "express";
-import { RouterController } from "./controller";
+import { AuthController } from "./controller";
+import {checkAuth} from "../../../middleware/check_auth";
 
 const router = Router();
-const controller = new RouterController();
+const controller = new AuthController();
 router.post("/sing-in", controller.singIn);
+router.get("/check", checkAuth(true));
 
 export default router;
