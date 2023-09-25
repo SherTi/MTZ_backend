@@ -317,24 +317,115 @@ window.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
-  const linkBtn = document.querySelectorAll('.p-nav-btn');
-  const linkContainer = document.querySelectorAll('.displayB');
-  if (linkBtn) {
-    linkBtn.forEach((link) => {
-      link.addEventListener('click' , ()=> {
-        // if (asasa) {
-        //   link.classList.add('active_button')
-        // } else if(!asasa){
-        //   link.classList.remove('active_button')
-        // }
-        linkContainer.forEach((el)=> {
-          if (link.id === el.id) {
-            el.style.display = "block"
-          } else  {
-            el.style.display = "none"
-          }
-        });
-      });
+  const general = document.querySelector('[data-type="general"]');
+  const characters = document.querySelector('[data-type="characters"]');
+  const equipment = document.querySelector('[data-type="equipment"]');
+  const certs = document.querySelector('[data-type="certs"]');
+
+  const generalContainer = document.querySelector('[data-container-type="general"]');
+  const charactersContainer = document.querySelector('[data-container-type="characters"]');
+  const equipmentContainer = document.querySelector('[data-container-type="equipment"]');
+  const certsContainer = document.querySelector('[data-container-type="certs"]');
+  let content_type = 'general';
+  general.classList.add('active_button');
+
+  function removeClass() {
+    if (generalContainer) {
+      generalContainer.classList.remove('hidden_page_container');
+    }
+    if (charactersContainer) {
+      charactersContainer.classList.remove('hidden_page_container');
+    }
+    if (equipmentContainer) {
+      equipmentContainer.classList.remove('hidden_page_container');
+    }
+    if (certsContainer) {
+      certsContainer.classList.remove('hidden_page_container');
+    }
+    if (general) {
+      general.classList.remove('active_button');
+    }
+    if (characters) {
+      characters.classList.remove('active_button');
+    }
+    if (equipment) {
+      equipment.classList.remove('active_button');
+    }
+    if (certs) {
+      certs.classList.remove('active_button');
+    }
+  }
+  function changeContentType(type = 'general') {
+    content_type = type;
+    removeClass();
+    switch(content_type) {
+      case "general":
+        if (general) {
+          general.classList.add('active_button');
+        }
+        break;
+      case "characters":
+        if (generalContainer) {
+          generalContainer.classList.add('hidden_page_container');
+        }
+        if (equipmentContainer) {
+          equipmentContainer.classList.add('hidden_page_container');
+        }
+        if (certsContainer) {
+          certsContainer.classList.add('hidden_page_container');
+        }
+        if (characters) {
+          characters.classList.add('active_button');
+        }
+        break;
+      case "equipment":
+        if (generalContainer) {
+          generalContainer.classList.add('hidden_page_container');
+        }
+        if (charactersContainer) {
+          charactersContainer.classList.add('hidden_page_container');
+        }
+        if (certsContainer) {
+          certsContainer.classList.add('hidden_page_container');
+        }
+        if (equipment) {
+          equipment.classList.add('active_button');
+        }
+        break;
+      case "certs":
+        if (generalContainer) {
+          generalContainer.classList.add('hidden_page_container');
+        }
+        if (charactersContainer) {
+          charactersContainer.classList.add('hidden_page_container');
+        }
+        if (equipmentContainer) {
+          equipmentContainer.classList.add('hidden_page_container');
+        }
+        if (certs) {
+          certs.classList.add('active_button');
+        }
+        break;
+    }
+  }
+  if (general) {
+    general.addEventListener("click", () => {
+      changeContentType('general');
+    });
+  }
+  if (characters) {
+    characters.addEventListener("click", (e) => {
+      changeContentType('characters');
+    });
+  }
+  if (equipment) {
+    equipment.addEventListener("click", (e) => {
+      changeContentType('equipment');
+    });
+  }
+  if (certs) {
+    certs.addEventListener("click", (e) => {
+      changeContentType('certs');
     });
   }
 

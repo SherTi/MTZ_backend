@@ -9,6 +9,14 @@
     font-weight: 600;
 }
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
 /*main-page-style*/
 .background{
     background-image: url("../images/BG_Photo.jpg");
@@ -1370,6 +1378,11 @@
 .p-letter{
     letter-spacing: 0.6px;
 }
+
+.hidden_page_container {
+    display: none;
+}
+
 @media (max-width: 2885px) {
     .info_container{
         padding: 50px 80px;
@@ -2529,7 +2542,7 @@
         margin-right: 2px;
     }
     .des_tab_btn-p-nav-panel{
-        display: none;
+        flex-wrap: wrap;
     }
     .p-nav-btn-b-radius2 , .p-nav-btn-b-radius{
         border-radius: 0;
@@ -2539,7 +2552,7 @@
         border-radius: 16px;
     }
     .p-nav-btn{
-        width: 100%;
+        width: 50%;
         font-size: 12px;
         padding: 20px 0;
     }
