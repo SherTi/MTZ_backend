@@ -564,6 +564,9 @@
     align-items: center ;
     margin-top: 12px;
 }
+.displayB{
+    display: none;
+}
 .s-dot{
     width: 30px;
     height: 10px;
@@ -710,7 +713,7 @@
     border-radius: 16px;
     letter-spacing: 0.54px;
 }
-.p-nav-btn:hover{
+.active_button{
     color: #ffffff;
     background: linear-gradient(#2A84FF   0% , #0061E7 100%);
     border-radius: 16px;

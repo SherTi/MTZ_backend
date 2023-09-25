@@ -317,5 +317,25 @@ window.addEventListener("DOMContentLoaded", () => {
       })
     })
   }
+  const linkBtn = document.querySelectorAll('.p-nav-btn');
+  const linkContainer = document.querySelectorAll('.displayB');
+  if (linkBtn) {
+    linkBtn.forEach((link) => {
+      link.addEventListener('click' , ()=> {
+        // if (asasa) {
+        //   link.classList.add('active_button')
+        // } else if(!asasa){
+        //   link.classList.remove('active_button')
+        // }
+        linkContainer.forEach((el)=> {
+          if (link.id === el.id) {
+            el.style.display = "block"
+          } else  {
+            el.style.display = "none"
+          }
+        });
+      });
+    });
+  }
 
 });
