@@ -21,29 +21,47 @@ window.addEventListener("DOMContentLoaded", () => {
         1630: {
           slidesPerView: 6,
         },
-        1080: {
+        1185:{
           slidesPerView: 5,
+        },
+        1120: {
+          slidesPerView: 5,
+        },
+        1080: {
+          slidesPerView: 4,
+        },
+        1024: {
+          slidesPerView: 4.5,
         },
         1020: {
           slidesPerView: 4,
         },
-        1024: {
+        990: {
+          slidesPerView: 5,
+        },
+        825: {
+          slidesPerView: 5,
+        },
+        768: {
           slidesPerView: 4,
         },
-        990: {
+        650:{
+          slidesPerView: 4,
+        },
+        620:{
           slidesPerView: 4,
         },
         525: {
           slidesPerView: 3,
         },
         425: {
-          slidesPerView: 2,
+          slidesPerView: 2.5,
         },
         375: {
           slidesPerView: 2,
         },
         320: {
-          slidesPerView: 2,
+          slidesPerView: 1.8,
         },
       },
     });
@@ -81,15 +99,24 @@ window.addEventListener("DOMContentLoaded", () => {
         slidesPerView: 3.8,
         spaceBetween: 40,
       },
-      425: {
-        slidesPerView: 2,
+      700:{
+        slidesPerView: 3.5,
+      },
+      690: {
+        slidesPerView: 3,
         spaceBetween:17,
       },
+      560:{
+        slidesPerView:2.8,
+      },
+      425:{
+        slidesPerView: 1.7,
+      },
       375: {
-        slidesPerView: 2,
+        slidesPerView: 1.7,
       },
       320: {
-        slidesPerView: 2,
+        slidesPerView: 1.6,
       },
     },
   });
@@ -241,6 +268,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const bg = document.querySelector(".background");
 
   if (bg) {
+    bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
     window.addEventListener("resize", () => {
       if (bg.clientWidth > 972) {
         bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
