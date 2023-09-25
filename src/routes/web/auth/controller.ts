@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import routes from "./routes";
 
 export class AuthController {
   async property_tractor(req: Request, res: Response) {

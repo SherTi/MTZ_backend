@@ -2,7 +2,7 @@ import { Router } from "express";
 import { MainController } from "./main";
 import authRoutes from "./web/auth/routes";
 import postsRoutes from "./web/posts/router";
-import apiRoutes from "./api/routes"
+import apiRoutes from "./api/routes";
 
 const router = Router();
 
