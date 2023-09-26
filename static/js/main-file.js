@@ -266,18 +266,19 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const bg = document.querySelector(".background");
-
   if (bg) {
-    bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-    window.addEventListener("resize", () => {
-      if (bg.clientWidth > 972) {
-        bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
-        console.log('worked')
-      } else if(bg.clientWidth < 972)  {
-        bg.style.height = "";
-        console.log('not worked')
-      }
-    });
+    if (bg.clientWidth > 972) {
+      bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+      window.addEventListener("resize", () => {
+        if (bg.clientWidth > 972) {
+          bg.style.height = `${Math.round(bg.clientWidth / (2882 / 2064))}px`;
+        } else {
+          bg.style.height = "";
+        }
+      });
+    } else  if(bg.clientWidth < 972){
+      bg.style.height = ""
+    }
   }
 
   const nav_catalogs = document.querySelectorAll(".nav_catalog_bnt");
@@ -327,7 +328,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const equipmentContainer = document.querySelector('[data-container-type="equipment"]');
   const certsContainer = document.querySelector('[data-container-type="certs"]');
   let content_type = 'general';
-  general.classList.add('active_button');
+  if  (general) {
+    general.classList.add('active_button');
+  }
 
   function removeClass() {
     if (generalContainer) {
