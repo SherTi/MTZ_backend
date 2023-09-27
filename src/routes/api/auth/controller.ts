@@ -6,7 +6,7 @@ export class AuthController {
     try {
       const { login, password } = req.body;
       if (!login || !password) {
-        res.status(400).json({
+        res.status(200).json({
           status: false,
           message: "Нет необходимых данных!",
           data: null,
@@ -15,7 +15,7 @@ export class AuthController {
       }
 
       if (!login.trim() || !password.trim()) {
-        res.status(400).json({
+        res.status(200).json({
           status: false,
           message: "Нет необходимых данных!",
           data: null,
@@ -23,8 +23,8 @@ export class AuthController {
         return;
       }
 
-      if (login !== 'root' || password !== 'admin123') {
-        res.status(401).json({
+      if (login !== "root" || password !== "admin123") {
+        res.status(200).json({
           status: false,
           message: "Неверный логин или пароль!",
           data: null,
@@ -33,11 +33,15 @@ export class AuthController {
       }
       const date = new Date();
       date.setDate(date.getDate() + 2);
-      const token = jwt.sign({
-        name: "Main Admin",
-        date: new Date().getTime(),
-        expiresIn: date.getTime(),
-      }, "850283e8-5b98-44ab-aebd-ef082a216d4a", {expiresIn: "2d"});
+      const token = jwt.sign(
+        {
+          name: "Main Admin",
+          date: new Date().getTime(),
+          expiresIn: date.getTime(),
+        },
+        "850283e8-5b98-44ab-aebd-ef082a216d4a",
+        { expiresIn: "2d" },
+      );
 
       res.status(200).json({
         status: true,
@@ -50,9 +54,9 @@ export class AuthController {
       });
     } catch (e) {
       console.log(e);
-      res.status(500).json({
+      res.status(200).json({
         status: false,
-        message: "Увы что то пошло не так",
+        message: "Увы что то пошло не так!",
         data: null,
       });
     }

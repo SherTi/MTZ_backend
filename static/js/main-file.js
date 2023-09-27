@@ -1,16 +1,23 @@
 window.addEventListener("DOMContentLoaded", () => {
   if (new Swiper("partner_swiper")) {
     const partner_swiper = new Swiper(".partner_swiper", {
-      direction: 'horizontal',
-      freeMode: true,
+      direction: "horizontal",
+      allowTouchMove: false,
+      freeMode: {
+        enabled: true,
+        sticky: true,
+        momentumBounce: false,
+        momentum: false,
+      },
       autoplay: {
         delay: 1,
         disableOnInteraction: false,
+        waitForTransition: false,
       },
       loop: true,
       rewind: true,
       margin: 15,
-      speed: 5000,
+      speed: 2000,
       breakpoints: {
         2556: {
           slidesPerView: 9,
@@ -21,7 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
         1630: {
           slidesPerView: 6,
         },
-        1185:{
+        1185: {
           slidesPerView: 5,
         },
         1120: {
@@ -45,10 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
         768: {
           slidesPerView: 4,
         },
-        650:{
+        650: {
           slidesPerView: 4,
         },
-        620:{
+        620: {
           slidesPerView: 4,
         },
         525: {
@@ -70,7 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const certificate_slider = new Swiper(".certificate-slider", {
     direction: "horizontal",
     effect: "slide",
-    loop:true,
+    loop: true,
     navigation: {
       nextEl: ".right-btn-n",
       prevEl: ".left-btn-n",
@@ -85,7 +92,7 @@ window.addEventListener("DOMContentLoaded", () => {
       slidesPerGroup: 1,
     },
     breakpoints: {
-      1170:{
+      1170: {
         slidesPerView: 4,
         spaceBetween: 20,
       },
@@ -95,21 +102,21 @@ window.addEventListener("DOMContentLoaded", () => {
       1024: {
         spaceBetween: 12,
       },
-      768:{
+      768: {
         slidesPerView: 3.8,
         spaceBetween: 40,
       },
-      700:{
+      700: {
         slidesPerView: 3.5,
       },
       690: {
         slidesPerView: 3,
-        spaceBetween:17,
+        spaceBetween: 17,
       },
-      560:{
-        slidesPerView:2.8,
+      560: {
+        slidesPerView: 2.8,
       },
-      425:{
+      425: {
         slidesPerView: 1.7,
       },
       375: {
@@ -123,9 +130,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const nav_bnt = document.querySelector(".catalog-btn");
   const menu = document.querySelector(".container-nav");
-  const nav_bnt_2 = document.querySelector(".under_categories")
-  const nav_btn_part = document.querySelector(".under_categories_2")
-  const menu_part = document.querySelector(".container-nav_part")
+  const nav_bnt_2 = document.querySelector(".under_categories");
+  const nav_btn_part = document.querySelector(".under_categories_2");
+  const menu_part = document.querySelector(".container-nav_part");
   if (nav_bnt) {
     nav_bnt.addEventListener("click", (event) => {
       event.preventDefault();
@@ -134,18 +141,18 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   if (nav_bnt_2) {
-    nav_bnt_2.addEventListener("click" , (event) => {
+    nav_bnt_2.addEventListener("click", (event) => {
       event.preventDefault();
       menu.classList.add("active");
       document.body.style.overflow = "hidden";
-    })
+    });
   }
   if (nav_btn_part) {
-    nav_btn_part.addEventListener("click" , (event) => {
+    nav_btn_part.addEventListener("click", (event) => {
       event.preventDefault();
-      menu_part.classList.add("active")
+      menu_part.classList.add("active");
       document.body.style.overflow = "hidden";
-    })
+    });
   }
   if (menu) {
     menu.addEventListener("click", (event) => {
@@ -155,21 +162,20 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  if(menu_part) {
-    menu_part.addEventListener("click" , (event) => {
-      if( event.target.classList.contains("nav-left-panel")) {
+  if (menu_part) {
+    menu_part.addEventListener("click", (event) => {
+      if (event.target.classList.contains("nav-left-panel")) {
         menu_part.classList.remove("active");
-        document.body.style.overflow = "visible"
+        document.body.style.overflow = "visible";
       }
-    })
+    });
   }
-
 
   let btn_menu = document.querySelector(".btn_nav_panel");
   let menu_body = document.querySelector(".background_r-nav-menu");
   let menu_active_btn = document.querySelector(".catalog-btn");
   if (btn_menu) {
-    if (menu_active_btn){
+    if (menu_active_btn) {
       menu_active_btn.addEventListener("click", () => {
         menu_body.classList.add("active_menu");
         document.body.style.overflow = "hidden";
@@ -178,7 +184,7 @@ window.addEventListener("DOMContentLoaded", () => {
     btn_menu.addEventListener("click", (event) => {
       event.preventDefault();
       menu_body.classList.toggle("active_menu");
-      if (menu_body.classList.contains("active_menu")){
+      if (menu_body.classList.contains("active_menu")) {
         document.body.style.overflow = "hidden";
       } else {
         document.body.style.overflow = "visible";
@@ -276,8 +282,8 @@ window.addEventListener("DOMContentLoaded", () => {
           bg.style.height = "";
         }
       });
-    } else  if(bg.clientWidth < 972){
-      bg.style.height = ""
+    } else if (bg.clientWidth < 972) {
+      bg.style.height = "";
     }
   }
 
@@ -301,135 +307,141 @@ window.addEventListener("DOMContentLoaded", () => {
   const ser_big_banner = document.querySelectorAll(".ser_container");
   if (ser_big) {
     ser_big.forEach((ser) => {
-      ser.addEventListener('click' , (event) => {
+      ser.addEventListener("click", (event) => {
         ser_big_banner.forEach((el) => {
           if (ser.id === el.id) {
-             el.style.display = "inline-flex"
-              document.body.style.overflow = "hidden"
-              el.addEventListener('click' , (event) => {
-                el.style.display = "none"
-                document.body.style.overflow = "visible"
-              })
+            el.style.display = "inline-flex";
+            document.body.style.overflow = "hidden";
+            el.addEventListener("click", (event) => {
+              el.style.display = "none";
+              document.body.style.overflow = "visible";
+            });
           } else {
-
           }
-        })
-        event.preventDefault()
-      })
-    })
+        });
+        event.preventDefault();
+      });
+    });
   }
   const general = document.querySelector('[data-type="general"]');
   const characters = document.querySelector('[data-type="characters"]');
   const equipment = document.querySelector('[data-type="equipment"]');
   const certs = document.querySelector('[data-type="certs"]');
 
-  const generalContainer = document.querySelector('[data-container-type="general"]');
-  const charactersContainer = document.querySelector('[data-container-type="characters"]');
-  const equipmentContainer = document.querySelector('[data-container-type="equipment"]');
-  const certsContainer = document.querySelector('[data-container-type="certs"]');
-  let content_type = 'general';
-  if  (general) {
-    general.classList.add('active_button');
+  const generalContainer = document.querySelector(
+    '[data-container-type="general"]',
+  );
+  const charactersContainer = document.querySelector(
+    '[data-container-type="characters"]',
+  );
+  const equipmentContainer = document.querySelector(
+    '[data-container-type="equipment"]',
+  );
+  const certsContainer = document.querySelector(
+    '[data-container-type="certs"]',
+  );
+  let content_type = "general";
+  if (general) {
+    general.classList.add("active_button");
   }
 
   function removeClass() {
     if (generalContainer) {
-      generalContainer.classList.remove('hidden_page_container');
+      generalContainer.classList.remove("hidden_page_container");
     }
     if (charactersContainer) {
-      charactersContainer.classList.remove('hidden_page_container');
+      charactersContainer.classList.remove("hidden_page_container");
     }
     if (equipmentContainer) {
-      equipmentContainer.classList.remove('hidden_page_container');
+      equipmentContainer.classList.remove("hidden_page_container");
     }
     if (certsContainer) {
-      certsContainer.classList.remove('hidden_page_container');
+      certsContainer.classList.remove("hidden_page_container");
     }
     if (general) {
-      general.classList.remove('active_button');
+      general.classList.remove("active_button");
     }
     if (characters) {
-      characters.classList.remove('active_button');
+      characters.classList.remove("active_button");
     }
     if (equipment) {
-      equipment.classList.remove('active_button');
+      equipment.classList.remove("active_button");
     }
     if (certs) {
-      certs.classList.remove('active_button');
+      certs.classList.remove("active_button");
     }
   }
-  function changeContentType(type = 'general') {
+  function changeContentType(type = "general") {
     content_type = type;
     removeClass();
-    switch(content_type) {
+    switch (content_type) {
       case "general":
         if (general) {
-          general.classList.add('active_button');
+          general.classList.add("active_button");
         }
         break;
       case "characters":
         if (generalContainer) {
-          generalContainer.classList.add('hidden_page_container');
+          generalContainer.classList.add("hidden_page_container");
         }
         if (equipmentContainer) {
-          equipmentContainer.classList.add('hidden_page_container');
+          equipmentContainer.classList.add("hidden_page_container");
         }
         if (certsContainer) {
-          certsContainer.classList.add('hidden_page_container');
+          certsContainer.classList.add("hidden_page_container");
         }
         if (characters) {
-          characters.classList.add('active_button');
+          characters.classList.add("active_button");
         }
         break;
       case "equipment":
         if (generalContainer) {
-          generalContainer.classList.add('hidden_page_container');
+          generalContainer.classList.add("hidden_page_container");
         }
         if (charactersContainer) {
-          charactersContainer.classList.add('hidden_page_container');
+          charactersContainer.classList.add("hidden_page_container");
         }
         if (certsContainer) {
-          certsContainer.classList.add('hidden_page_container');
+          certsContainer.classList.add("hidden_page_container");
         }
         if (equipment) {
-          equipment.classList.add('active_button');
+          equipment.classList.add("active_button");
         }
         break;
       case "certs":
         if (generalContainer) {
-          generalContainer.classList.add('hidden_page_container');
+          generalContainer.classList.add("hidden_page_container");
         }
         if (charactersContainer) {
-          charactersContainer.classList.add('hidden_page_container');
+          charactersContainer.classList.add("hidden_page_container");
         }
         if (equipmentContainer) {
-          equipmentContainer.classList.add('hidden_page_container');
+          equipmentContainer.classList.add("hidden_page_container");
         }
         if (certs) {
-          certs.classList.add('active_button');
+          certs.classList.add("active_button");
         }
         break;
     }
   }
   if (general) {
     general.addEventListener("click", () => {
-      changeContentType('general');
+      changeContentType("general");
     });
   }
   if (characters) {
     characters.addEventListener("click", (e) => {
-      changeContentType('characters');
+      changeContentType("characters");
     });
   }
   if (equipment) {
     equipment.addEventListener("click", (e) => {
-      changeContentType('equipment');
+      changeContentType("equipment");
     });
   }
   if (certs) {
     certs.addEventListener("click", (e) => {
-      changeContentType('certs');
+      changeContentType("certs");
     });
   }
-
 });

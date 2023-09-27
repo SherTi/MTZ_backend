@@ -20,4 +20,5 @@ export interface CreateProductBody {
   trans?: Characters[];
   equipment?: string[];
   chars?: Characters[];
+  category_id?: string;
 }
