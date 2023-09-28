@@ -35,8 +35,8 @@ export class Gallery extends Model<
 > {
   declare id: CreationOptional<number>;
   declare size: string;
-  declare height: string;
-  declare width: string;
+  declare height: number;
+  declare width: number;
   declare src: string;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
@@ -146,22 +146,19 @@ Gallery.init(
       type: DataTypes.BIGINT,
       allowNull: false,
       get() {
-        return parseInt(this.getDataValue("height"));
+        return parseInt(this.getDataValue("height") as any);
       },
     },
     width: {
       type: DataTypes.BIGINT,
       allowNull: false,
       get() {
-        return parseInt(this.getDataValue("width"));
+        return parseInt(this.getDataValue("width") as any);
       },
     },
     size: {
-      type: DataTypes.BIGINT,
+      type: DataTypes.TEXT,
       allowNull: false,
-      get() {
-        return parseInt(this.getDataValue("size"));
-      },
     },
     src: { type: DataTypes.STRING, allowNull: false },
     createdAt: { type: DataTypes.DATE, allowNull: false },
