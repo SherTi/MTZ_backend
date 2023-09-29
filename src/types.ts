@@ -1,7 +1,7 @@
 export type Characters = {
   key: string;
   value: string;
-}
+};
 
 export interface ParamsDictionary {
   [key: string]: string;
@@ -21,4 +21,10 @@ export interface CreateProductBody {
   equipment?: string[];
   chars?: Characters[];
   category_id?: string;
+}
+
+export interface CreateCategoryBody {
+  type?: "tractor" | "spare";
+  name?: string;
+  image_id?: string;
 }

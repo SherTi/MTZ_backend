@@ -34,6 +34,7 @@ export class Gallery extends Model<
   InferCreationAttributes<Gallery>
 > {
   declare id: CreationOptional<number>;
+  declare name?: string;
   declare size: string;
   declare height: number;
   declare width: number;
@@ -45,7 +46,7 @@ export class Category extends Model<
   InferAttributes<Category>,
   InferCreationAttributes<Category>
 > {
-  declare id: CreationOptional<number>;
+  declare id: CreationOptional<string>;
   declare name: string;
   declare image_id?: string | null;
   declare tractor: boolean;
@@ -72,8 +73,8 @@ Product.init(
       defaultValue: DataTypes.UUIDV4,
       unique: true,
     },
-    name: { type: DataTypes.STRING, allowNull: false },
-    desc: { type: DataTypes.STRING, allowNull: false },
+    name: { type: DataTypes.TEXT, allowNull: false },
+    desc: { type: DataTypes.TEXT, allowNull: false },
     main_chars: {
       type: DataTypes.TEXT,
       allowNull: false,
@@ -141,6 +142,13 @@ Gallery.init(
       unique: true,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
+    },
+    name: {
+      type: DataTypes.TEXT,
+      get() {
+        const strArr = this.getDataValue("src").split("/");
+        return strArr[strArr.length - 1];
+      },
     },
     height: {
       type: DataTypes.BIGINT,

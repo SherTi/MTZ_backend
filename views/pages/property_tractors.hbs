@@ -1,26 +1,30 @@
 <div class="container">
     <div class="link-title-pages">
         <a href="/"><p>Главная / </p></a>
-        <a href="/catalog_tractors_models"><p>Каталог техники / </p></a>
-        <a href="/catalog_tractors_models"><p>Тракторы / </p></a>
-        <a href="/property_tractors"><p>Беларус МТЗ-1221</p></a>
+        <a href="/catalog_tractors_models/{{category.id}}"><p>{{category.name}} / </p></a>
+        <p>{{product.name}}</p>
     </div>
     <div class="property-area">
         <div class="p-fst-block">
             <div class="p-img-block">
-                <img src="/images/tractorRed.png" alt="" class="p-img-item">
+                <img src="{{product.img}}" alt="" class="p-img-item">
                 <div class="p-img-set-t">
-                    <img src="/images/tractorRed1.png" alt="" class="p-img-item-mini">
-                    <img src="/images/tractorRed1.png" alt="" class="p-img-item-mini">
-                    <img src="/images/tractorRed1.png" alt="" class="p-img-item-mini">
+                  {{#if product.st_image}}
+                    <img src="{{product.st_img}}" alt="" class="p-img-item-mini">
+                  {{/if}}
+                  {{#if product.sd_image}}
+                    <img src="{{product.sd_img}}" alt="" class="p-img-item-mini">
+                  {{/if}}
+                  {{#if product.th_image}}
+                    <img src="{{product.th_img}}" alt="" class="p-img-item-mini">
+                  {{/if}}
                 </div>
             </div>
             <div class="p-content-block">
-                <h1 class="p-title mar-b-30 title-name">Беларус МТЗ-1221.1</h1>
-                <p class="p-des"><span>Мощность -</span> 36 лс</p>
-                <p class="p-des"><span>Двигатель - </span> Д260.2S2, 6 цилиндров с турбонадувом</p>
-                <p class="p-des"><span>Коробка передач - </span> Синхронизированная</p>
-                <p class="p-des mar-b-30"><span>Число передач - </span> 16/8</p>
+                <h1 class="p-title mar-b-30 title-name">{{product.name}}</h1>
+                {{#each product.main_chars}}
+                  <p class="p-des"><span>{{key}} -</span> {{value}}</p>
+                {{/each}}
                 <p class="p-link-property mar-b-32">Все характеристики</p>
                 <div class="p-btn-block">
                     <button class="p-btn-more-info">Узнать стоимость</button>
@@ -55,166 +59,94 @@
                 <img src="/images/coin.png" alt="" class="p-c-card-img">
             </div>
         </div>
+      {{#if product.is_tractor}}
         <div class="p-nav-panel des_tab_btn-p-nav-panel">
-            <a class="p-nav-btn" data-type="general">Описание</a>
-            <a class="p-nav-btn" data-type="characters">Характеристики</a>
-            <a class="p-nav-btn" data-type="equipment">Комплектация</a>
-            <a class="p-nav-btn" data-type="certs">Сертификаты</a>
+          <a class="p-nav-btn" data-type="general">Описание</a>
+          {{#if product.motor}}
+            {{#if product.motor.length}}
+              <a class="p-nav-btn" data-type="characters">Характеристики</a>
+            {{else}}
+              {{#if product.trans}}
+                {{#if product.trans.length}}
+                  <a class="p-nav-btn" data-type="characters">Характеристики</a>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{else}}
+            {{#if product.trans}}
+              {{#if product.trans.length}}
+                <a class="p-nav-btn" data-type="characters">Характеристики</a>
+              {{/if}}
+            {{/if}}
+          {{/if}}
+          {{#if product.equipment}}
+            {{#if product.equipment.length}}
+              <a class="p-nav-btn" data-type="equipment">Комплектация</a>
+            {{/if}}
+          {{/if}}
+          <a class="p-nav-btn" data-type="certs">Сертификаты</a>
         </div>
+      {{/if}}
         <div class="property-block mar-b-30" data-container-type="general">
-            <p class="p-b-des-text">
-                Трактор предназзначен для выполнения
-                различных работ в сельском хозяйстве в агрегате с навесными,
-                полунавесныеми и прицепными машинами, в промышленности и на транспорте.
-            </p>
-            <p class="p-b-des-text">
-                Малые габариты, позволяющие применять трактор в теплицах и небольщих помещениях.
-                Экологический стандарт Stage IIIa. Передний ведущий мост.
-            </p>
-            <h3 class="p-b-title-text">Оссобености:</h3>
-            <div class="p-item-block">
-                <p class="p-b-des-text mar-b-10 p--before-element ">Низкий расход топлива ( от 1.6л. в час )</p>
-                <p class="p-b-des-text mar-b-10 p--before-element">Комфортабельная отапливаемая кабина с регулируемым сиденьем</p>
-                <p class="p-b-des-text mar-b-10 p--before-element">Широкий диапазон скоростей</p>
-            </div>
+            {{#each s}}
+              <p class="p-b-des-text">{{this}}</p>
+            {{/each}}
         </div>
-        <div class="property-block mar-b-30" data-container-type="characters" >
+        <div class="property-block mar-b-30" data-container-type="characters">
             <ul>
-                <li class="p-title p-letter">Двигатель</li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Тип</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">Дизельный</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Модель</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font_wight_des p-font-wrap">“Lombardini” LDW1603 / B3</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Мощность двигателя, кВт (л.с)</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">26 (36)</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Номинальная частота вращения, об/мин</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">3000</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Число цилиндров, шт</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">3</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Рабочий объём, л</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">1,649/1,600</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Макс крутящий момент, Н*м</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">92/94</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Коэффициент запаса крутящего момента, %</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">12/20</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Ёмкость топливного бака, л</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">32</span>
-                </li>
-                <li class="p-title p-letter mar-top-30">Трансмиссия</li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Муфта сцепления</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">Фрикционная, постоянно замкнутая</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Коробка передач</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">Механическая, двухдиапозонная  с понимажющим редуктором</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Число передач: вперед/назад </span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">16/8</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Скорость передвижения: вперед/назад</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">1.0-25.2/1.8-13.3</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Задний ВОМ: независимый |, об/мин</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">540</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Задний ВОМ: независимый ||, об/мин</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap" >1000</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Задний ВОМ: синхронный |, об/мин</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">3.4</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Задний ВОМ: синхронный ||, об/мин</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap">6.3</span>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-text-width">Главяная передача</span>
-                    <div class="border_under"></div>
-                    <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">Конические шестерни со спиральными зубьями</span>
-                </li>
+                {{#if product.motor}}
+                  {{#if product.motor.length}}
+                    <li class="p-title p-letter">Двигатель</li>
+                    {{#each product.motor}}
+                      <li class="p-ul-des">
+                        <span class="p-ul-des-text p-text-width">{{key}}</span>
+                        <div class="border_under"></div>
+                        <span class="p-ul-des-text p-font-wight p-font-wrap">{{value}}</span>
+                      </li>
+                    {{/each}}
+                  {{/if}}
+                {{/if}}
+                {{#if product.trans}}
+                  {{#if product.trans.length}}
+                    <li class="p-title p-letter mar-top-30">Трансмиссия</li>
+                    {{#each product.trans}}
+                      <li class="p-ul-des">
+                        <span class="p-ul-des-text p-text-width">{{key}}</span>
+                        <div class="border_under"></div>
+                        <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">{{value}}</span>
+                      </li>
+                    {{/each}}
+                  {{/if}}
+                {{/if}}
+                {{#if product.chars}}
+                  {{#if product.chars.length}}
+                    <li class="p-title p-letter">Характеристики</li>
+                    {{#each product.chars}}
+                      <li class="p-ul-des">
+                        <span class="p-ul-des-text p-text-width">{{key}}</span>
+                        <div class="border_under"></div>
+                        <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">{{value}}</span>
+                      </li>
+                    {{/each}}
+                  {{/if}}
+                {{/if}}
             </ul>
         </div>
-        <div class="property-block mar-b-30" data-container-type="equipment">
+      {{#if product.equipment}}
+        {{#if product.equipment.length}}
+          <div class="property-block mar-b-30" data-container-type="equipment">
             <ul>
-                <li class="p-title p-letter">Стандартная комплектация</li>
+              <li class="p-title p-letter">Стандартная комплектация</li>
+              {{#each product.equipment}}
                 <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Задний ВОМ (2-х скоростной, синхронный, 8/21 или 6/21 шлицов)</span>
-                    <div class="border_under mar_line"></div>
+                  <span class="p-ul-des-text p-font-wight p-font-wrap-1">{{this}}</span>
+                  <div class="border_under mar_line"></div>
                 </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Заднее навесное устройстро (3-х точное, 2 гидроцилиндра, фиксируюшие цепи)</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Гидровывода (2 на задней стороне, 2спереди)</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Трехсекционный гидрораспределитель:</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Розетка (на задней стороне)</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Переднее и заднее рабочее освещение (2 сзади 2 спереди)</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Поворотные лампы (4)</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Лампы аварийного освещения</span>
-                    <div class="border_under mar_line"></div>
-                </li>
-                <li class="p-ul-des">
-                    <span class="p-ul-des-text p-font-wight p-font-wrap-1">Поцветка номерного знака</span>
-                    <div class="border_under mar_line"></div>
-                </li>
+              {{/each}}
             </ul>
-        </div>
+          </div>
+        {{/if}}
+      {{/if}}
         <div class="certificate-area-block" data-container-type="certs">
             <div class="certificate-area reset-mar">
                 <div class="certificate-slider certificate-slider">
