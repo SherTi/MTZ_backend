@@ -62,8 +62,8 @@
       {{#if product.is_tractor}}
         <div class="p-nav-panel des_tab_btn-p-nav-panel">
           <a class="p-nav-btn" data-type="general">Описание</a>
-          {{#if product.motor}}
-            {{#if product.motor.length}}
+          {{#if product.chars}}
+            {{#if product.chars.length}}
               <a class="p-nav-btn" data-type="characters">Характеристики</a>
             {{else}}
               {{#if product.trans}}
@@ -92,61 +92,27 @@
               <p class="p-b-des-text">{{this}}</p>
             {{/each}}
         </div>
-        <div class="property-block mar-b-30" data-container-type="characters">
+      {{#if product.chars}}
+        {{#if product.chars.length}}
+          <div class="property-block mar-b-30" data-container-type="characters">
             <ul>
-                {{#if product.motor}}
-                  {{#if product.motor.length}}
-                    <li class="p-title p-letter">Двигатель</li>
-                    {{#each product.motor}}
-                      <li class="p-ul-des">
-                        <span class="p-ul-des-text p-text-width">{{key}}</span>
-                        <div class="border_under"></div>
-                        <span class="p-ul-des-text p-font-wight p-font-wrap">{{value}}</span>
-                      </li>
-                    {{/each}}
-                  {{/if}}
-                {{/if}}
-                {{#if product.trans}}
-                  {{#if product.trans.length}}
-                    <li class="p-title p-letter mar-top-30">Трансмиссия</li>
-                    {{#each product.trans}}
-                      <li class="p-ul-des">
-                        <span class="p-ul-des-text p-text-width">{{key}}</span>
-                        <div class="border_under"></div>
-                        <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">{{value}}</span>
-                      </li>
-                    {{/each}}
-                  {{/if}}
-                {{/if}}
-                {{#if product.chars}}
-                  {{#if product.chars.length}}
-                    <li class="p-title p-letter">Характеристики</li>
-                    {{#each product.chars}}
-                      <li class="p-ul-des">
-                        <span class="p-ul-des-text p-text-width">{{key}}</span>
-                        <div class="border_under"></div>
-                        <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">{{value}}</span>
-                      </li>
-                    {{/each}}
-                  {{/if}}
-                {{/if}}
-            </ul>
-        </div>
-      {{#if product.equipment}}
-        {{#if product.equipment.length}}
-          <div class="property-block mar-b-30" data-container-type="equipment">
-            <ul>
-              <li class="p-title p-letter">Стандартная комплектация</li>
-              {{#each product.equipment}}
-                <li class="p-ul-des">
-                  <span class="p-ul-des-text p-font-wight p-font-wrap-1">{{this}}</span>
-                  <div class="border_under mar_line"></div>
-                </li>
+              {{#each product.chars}}
+                <li class="p-title p-letter">{{name}}</li>
+                {{#each characters}}
+                  <li class="p-ul-des">
+                    <span class="p-ul-des-text p-text-width">{{key}}</span>
+                    <div class="border_under"></div>
+                    <span class="p-ul-des-text p-font-wight p-font-wrap p-font_wight_des">{{value}}</span>
+                  </li>
+                {{/each}}
               {{/each}}
             </ul>
           </div>
         {{/if}}
       {{/if}}
+
+
+
         <div class="certificate-area-block" data-container-type="certs">
             <div class="certificate-area reset-mar">
                 <div class="certificate-slider certificate-slider">

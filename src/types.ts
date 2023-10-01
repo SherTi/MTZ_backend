@@ -1,6 +1,10 @@
-export type Characters = {
+export type CharacterItem = {
   key: string;
   value: string;
+};
+export type Characters = {
+  name: string;
+  characters: CharacterItem[];
 };
 
 export interface ParamsDictionary {
@@ -10,15 +14,12 @@ export interface ParamsDictionary {
 export interface CreateProductBody {
   type?: "tractor" | "part";
   name?: string;
-  main_chars?: Characters[];
+  main_chars?: CharacterItem[];
   main_image?: string;
   st_image?: string;
   sd_image?: string;
   th_image?: string;
   desc?: string;
-  motor?: Characters[];
-  trans?: Characters[];
-  equipment?: string[];
   chars?: Characters[];
   category_id?: string;
 }

@@ -75,7 +75,7 @@ app.use(async (req: Request, res: Response) => {
 });
 const start = () => {
   db.authenticate().then(() => {
-    db.sync().then(() => {
+    db.sync({ force: true }).then(() => {
       app.listen(
         (process.env.PORT as any) || 4300,
         process.env.HOST || "localhost",

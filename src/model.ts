@@ -7,7 +7,7 @@ import {
   ForeignKey,
 } from "sequelize";
 import db from "./db";
-import { Characters } from "./types";
+import { CharacterItem, Characters } from "./types";
 
 export class Product extends Model<
   InferAttributes<Product>,
@@ -16,14 +16,11 @@ export class Product extends Model<
   declare id: CreationOptional<string>;
   declare name: string;
   declare desc: string;
-  declare main_chars: Characters[];
+  declare main_chars: CharacterItem[];
   declare main_image: string;
   declare st_image?: string | null;
   declare sd_image?: string | null;
   declare th_image?: string | null;
-  declare motor?: Characters[] | null;
-  declare trans?: Characters[] | null;
-  declare equipment?: string[] | null;
   declare chars?: Characters[] | null;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
@@ -89,36 +86,6 @@ Product.init(
     st_image: { type: DataTypes.TEXT, allowNull: true },
     sd_image: { type: DataTypes.TEXT, allowNull: true },
     th_image: { type: DataTypes.TEXT, allowNull: true },
-    motor: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      get() {
-        return JSON.parse(this.getDataValue("motor") as any);
-      },
-      set(value) {
-        return this.setDataValue("motor", JSON.stringify(value) as any);
-      },
-    },
-    trans: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      get() {
-        return JSON.parse(this.getDataValue("trans") as any);
-      },
-      set(value) {
-        return this.setDataValue("trans", JSON.stringify(value) as any);
-      },
-    },
-    equipment: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      get() {
-        return JSON.parse(this.getDataValue("equipment") as any);
-      },
-      set(value) {
-        return this.setDataValue("equipment", JSON.stringify(value) as any);
-      },
-    },
     chars: {
       type: DataTypes.TEXT,
       allowNull: false,

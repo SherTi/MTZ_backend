@@ -21,9 +21,6 @@ export class ProductController {
         sd_image,
         th_image,
         desc,
-        motor,
-        trans,
-        equipment,
         chars,
         category_id,
       } = req.body;
@@ -34,7 +31,6 @@ export class ProductController {
         !main_chars ||
         !main_image ||
         !desc ||
-        !equipment ||
         !category_id
       ) {
         res.status(200).json({
@@ -58,9 +54,6 @@ export class ProductController {
         th_image: checkImages(st_image, sd_image, th_image)
           ? th_image
           : undefined,
-        motor,
-        trans,
-        equipment,
         chars,
         category_id,
       });
