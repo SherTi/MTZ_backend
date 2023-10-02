@@ -498,7 +498,7 @@ img {
 .a-u-img-item-block{
     display: inline-flex;
     justify-content: space-between;
-    width: 100%;
+    gap: 0 20px;
     margin-top: 20px;
 }
 .a-r-num-text-b{
@@ -629,7 +629,7 @@ img {
 }
 .p-img-set-t{
     display: flex;
-    gap: 0 22px;
+    gap: 0 20px;
 }
 .p-img-set-t img{
     margin-top: 20px;
@@ -1266,7 +1266,6 @@ img {
 }
 .p-img-item{
     width: 462px;
-    height: 382px;
     object-fit: contain;
     border-radius: 16px;
 }
@@ -1838,8 +1837,6 @@ img {
     }
     .about-us-team-mini{
         width: 106px;
-        height: 88px;
-        object-fit: contain;
     }
     .catalog-area{
         margin-bottom: 100px;
@@ -1888,11 +1885,9 @@ img {
     }
     .p-img-item{
         width: 350px;
-        height: 100%;
     }
     .p-img-item-mini{
-        width: 96px;
-        height: 80px;
+        width: 106px;
     }
     .p-fst-block{
         justify-content: unset;
@@ -2125,13 +2120,10 @@ img {
         margin-right: 0;
     }
     .about-us-team{
-        width: 350px;
+        width: 462px;
     }
     .about-us-team-mini{
-        width: 120px;
-    }
-    .a-u-img-item-block{
-        width: 52%;
+        width: 140px;
     }
     .about-us-img-content-block{
         text-align: center;
@@ -2208,12 +2200,10 @@ img {
         height: 222px;
     }
 }
-@media (max-width:705px ) {
-    .about-us-team{
-        width: 315px;
-    }
-    .about-us-team-mini{
-        width: 100px;
+@media (max-width: 750px) {
+    .img-big{
+        width: 90%;
+        object-fit: contain;
     }
 }
 @media (max-width: 700px) {
@@ -2238,9 +2228,6 @@ img {
     }
     .mar-def-m{
         margin: 0;
-    }
-    .a-u-img-item-block{
-        width: 58%;
     }
     .contact-block{
         flex-direction: column;
@@ -2309,8 +2296,8 @@ img {
 }
 @media (max-width: 605px) {
     .cer-big-img {
-        height: auto;
-        width: 100%;
+        object-fit: contain;
+        width: 90%;
     }
     .mar-b-32{
         margin-bottom: 16px;
@@ -2325,9 +2312,6 @@ img {
     }
 }
 @media (max-width: 560px) {
-    .a-u-img-item-block{
-        width: 64%;
-    }
     .a-c-img{
         margin-right: 0;
         display: flex;
@@ -2337,18 +2321,16 @@ img {
 }
 @media (max-width: 525px) {
     .about-us-team{
-        width: 100%;
+        width: 350px;
     }
     .a-u-img-item-block{
-        width: 100%;
+        gap: 0 15px;
     }
     .s-c-title{
         letter-spacing: 0.48px;
     }
     .about-us-team-mini{
-        width: 130px;
-        object-fit: cover;
-        border-radius: 12px;
+        width: 106px;
     }
     .nav-t{
         display: none;
@@ -2577,9 +2559,6 @@ img {
     /*    contact*/
 
     /*property-page*/
-    .p-img-block{
-        width: 100%;
-    }
     .p-img-set-t{
         display: none;
     }
@@ -2587,9 +2566,6 @@ img {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-    .p-content-block{
-        padding: 0 0 0 50px;
     }
     .p-c-card{
         margin-right: 0;
@@ -2754,11 +2730,6 @@ img {
         display: block;
     }
 }
-@media (max-width: 450px) {
-    .about-us-team-mini{
-        width: 100px;
-    }
-}
 @media (max-width: 430px) {
     .p-img-item{
         width: 100%;
@@ -2775,6 +2746,10 @@ img {
     .cer-01-img{
         width: 115px;
         height: 186px;
+    }
+    .p-m-card-content{
+        width: 100%;
+        padding: 20px 30px 20px 30px;
     }
 }
 @media (max-width: 375px) {
@@ -2801,6 +2776,9 @@ img {
     }
     .certificate-area-block{
         padding: 10px 17px 10px 18px;
+    }
+    .p-m-card-content{
+        margin-left: 0;
     }
 }
 @media (max-width: 350px) {
