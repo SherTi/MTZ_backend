@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Category, Gallery } from "../model";
+import { Category, Gallery, Settings } from "../model";
 
 export class MainController {
   async get(req: Request, res: Response) {
@@ -15,6 +15,26 @@ export class MainController {
           }
         }
       }
+      const settings = await Settings.findOne();
+      const cats: any[] = [];
+      const parts: string[] = [];
+      if (settings) {
+        for (const c of settings.recommended_categories) {
+          const img = await Gallery.findOne({ where: { id: c.image } });
+          if (img) {
+            cats.push({
+              ...c,
+              src: img.src,
+            });
+          }
+        }
+        for (const p of settings.partners) {
+          const img = await Gallery.findOne({ where: { id: p } });
+          if (img) {
+            parts.push(img.src);
+          }
+        }
+      }
       res.render("index", {
         styles: ["header.css", "style.css", "footer.css"],
         main: true,
@@ -25,6 +45,8 @@ export class MainController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        cats,
+        parts,
       });
     } catch (e) {}
   }

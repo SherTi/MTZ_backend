@@ -21,81 +21,13 @@
     </div>
     <div class="partner_swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
+            {{#each parts}}
+              <div class="swiper-slide">
                 <div class="icon-p-card">
-                    <img src="/images/lidatproprommash%20logo%201.png" alt="" class="icon-item-p">
+                  <img src="{{this}}" alt="" class="icon-item-p">
                 </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/em%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/bzgt%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/remkom%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/belarus%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/lidatproprommash%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/em%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/bzgt%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/remkom%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/belarus%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/lidatproprommash%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/em%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/bzgt%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/remkom%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="icon-p-card">
-                    <img src="/images/belarus%20logo%201.png" alt="" class="icon-item-p">
-                </div>
-            </div>
+              </div>
+            {{/each}}
         </div>
     </div>
 </div>
@@ -233,31 +165,25 @@
         </div>
     </div>
 </div>
-<div class="container">
+{{#if cats.length}}
+  <div class="container">
     <div class="file-for-area">
-        <h2 class="s-c-title mar-50">Мы поставляем</h2>
-        <div class="f-f-block-card">
+      <h2 class="s-c-title mar-50">Мы поставляем</h2>
+      <div class="f-f-block-card">
+        {{#each cats}}
+          <a href="/catalog_tractors_models/{{id}}">
             <div class="f-f-card ">
-                <div class="f-f-card-img">
-                    <img src="/images/file-for-img.png" alt="" class="f-f-img">
-                </div>
-                <div class="bg-f-f-card "><p class="f-f-text">Сельскохозяйственная техника</p></div>
+              <div class="f-f-card-img">
+                <img src="{{src}}" alt="" class="f-f-img">
+              </div>
+              <div class="bg-f-f-card "><p class="f-f-text">{{name}}</p></div>
             </div>
-            <div class="f-f-card mar-def-m">
-                <div class="f-f-card-img">
-                    <img src="/images/f-f-img2.png" alt="" class="f-f-img">
-                </div>
-                <div class="bg-f-f-card"><p class="f-f-text">Навесное и прицепное<br> оборудование</p></div>
-            </div>
-            <div class="f-f-card  ">
-                <div class="f-f-card-img">
-                    <img src="/images/f-f-img3.png" alt="" class="f-f-img">
-                </div>
-                <div class="bg-f-f-card"><p class="f-f-text">Запасные части</p></div>
-            </div>
-        </div>
+          </a>
+        {{/each}}
+      </div>
     </div>
-</div>
+  </div>
+{{/if}}
 <div class="container">
     <div class="just-schema">
         <div class="schema-title-text_block">
