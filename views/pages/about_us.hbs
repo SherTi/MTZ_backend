@@ -5,11 +5,11 @@
     </div>
     <div class="about-us-area">
         <div class="about-us-img-block">
-            <img src="/images/team-img.png" alt="" class="about-us-team img-big-view">
+            <img src="{{staff_main.src}}" alt="" class="about-us-team img-big-view">
             <div class="a-u-img-item-block">
-                <img src="/images/team-img02.png" alt="" class="about-us-team-mini img-big-view">
-                <img src="/images/team-img03.png" alt="" class="about-us-team-mini img-big-view">
-                <img src="/images/team-img04.png" salt="" class="about-us-team-mini img-big-view">
+                {{#each staff_images}}
+                  <img src="{{src}}" alt="" class="about-us-team-mini img-big-view">
+                {{/each}}
             </div>
         </div>
         <div class="about-us-img-content-block">
@@ -105,53 +105,42 @@
             </div>
         </div>
     </div>
-    <h2 class="s-c-title">Лицензии и сертификаты</h2>
-    <div class="certificate-area-block mar-cer" data-container-type="certs">
+    {{#if certs.length}}
+      <h2 class="s-c-title">Лицензии и сертификаты</h2>
+      <div class="certificate-area-block mar-cer" data-container-type="certs">
         <div class="certificate-area reset-mar">
-            <div class="certificate-slider certificate-slider">
-                <div class="swiper-wrapper">
-                    <div id="1" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
-                    </div>
-                    <div id="2" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-2.png" alt="" class="cer-01-img">
-                    </div>
-                    <div id="3" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-3.png" alt="" class="cer-01-img">
-                    </div>
-                    <div id="4" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-4.png" alt="" class="cer-01-img">
-                    </div>
-                    <div id="5" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
-                    </div>
-                    <div id="6" class="cer-block swiper-slide">
-                        <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
-                    </div>
+          <div class="certificate-slider certificate-slider">
+            <div class="swiper-wrapper">
+              {{#each certs}}
+                <div class="cer-block swiper-slide">
+                  <img src="{{src}}" alt="" class="cer-01-img">
                 </div>
-                <button class=" nav-btn  left-btn-n ">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
-                        <path d="
+              {{/each}}
+            </div>
+            <button class=" nav-btn  left-btn-n ">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
+                <path d="
                         M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3
                         0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8
                         0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-                </button>
-                <button class=" nav-btn  right-btn-n">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
-                        <path d="
+            </button>
+            <button class=" nav-btn  right-btn-n">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
+                <path d="
                         M246.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8
                         12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 41.4 118.6c-12.5-12.5-12.5-32.8
                         0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-                </button>
-                <div id="dots-container" class=" s-dot-block"></div>
-            </div>
+            </button>
+            <div id="dots-container" class=" s-dot-block"></div>
+          </div>
         </div>
         <div class="ser_block">
-            <div class="ser_container">
-                <img src="" alt="" class="cer-big-img">
-            </div>
+          <div class="ser_container">
+            <img src="" alt="" class="cer-big-img">
+          </div>
         </div>
-    </div>
+      </div>
+    {{/if}}
 </div>
 <div class="modal_container_img">
     <img src="" alt="" class="img-big">

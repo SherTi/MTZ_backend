@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Category, Gallery, Product } from "../../../model";
+import { Category, Gallery, Product, Settings } from "../../../model";
 
 export class AuthController {
   async property_tractor(req: Request, res: Response) {
@@ -41,6 +41,16 @@ export class AuthController {
           }
         }
       }
+      const settings = await Settings.findOne();
+      const certs: any[] = [];
+      if (settings) {
+        for (const c of settings.certificates) {
+          const img = await Gallery.findOne({ where: { id: c } });
+          if (img) {
+            certs.push(img.toJSON());
+          }
+        }
+      }
       res.render("property_tractors", {
         styles: ["header.css", "style.css", "footer.css"],
         tractor_categories: categories.filter((value) => {
@@ -54,6 +64,7 @@ export class AuthController {
           return !!val.trim();
         }),
         category: cat,
+        certs,
       });
     } catch (e) {}
   }
@@ -161,6 +172,30 @@ export class AuthController {
           }
         }
       }
+      const settings = await Settings.findOne();
+      const certs: any[] = [];
+      let staff_main: Gallery | null = null;
+      const staff_images: any = [];
+      if (settings) {
+        for (const c of settings.certificates) {
+          const img = await Gallery.findOne({ where: { id: c } });
+          if (img) {
+            certs.push(img.toJSON());
+          }
+        }
+        staff_main = await Gallery.findOne({
+          where: { id: settings.staff_main },
+          raw: true,
+        });
+        if (staff_main) {
+          for (const c of settings.staff) {
+            const img = await Gallery.findOne({ where: { id: c } });
+            if (img) {
+              staff_images.push(img.toJSON());
+            }
+          }
+        }
+      }
       res.render("about_us", {
         styles: ["header.css", "style.css", "footer.css"],
         tractor_categories: categories.filter((value) => {
@@ -169,6 +204,9 @@ export class AuthController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        certs,
+        staff_images,
+        staff_main,
       });
     } catch (e) {}
   }

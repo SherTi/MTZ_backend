@@ -1421,6 +1421,16 @@ img {
     font-size: 36px;
     margin-bottom: 30px;
 }
+
+.about-us-team {
+    width: 462px;
+    object-fit: contain;
+    border-radius: 16px;
+}
+.about-us-team-mini {
+    width: 140px;
+    border-radius: 16px;
+}
 @media (max-width: 2885px) {
     .info_container{
         padding: 50px 80px;

@@ -110,54 +110,45 @@
           </div>
         {{/if}}
       {{/if}}
-      <div class="certificate-area-block" data-container-type="certs">
-        <div class="certificate-area reset-mar">
-          <div class="certificate-slider certificate-slider">
-            <div class="swiper-wrapper">
-              <div id="1" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
+      {{#if certs.length}}
+        <div class="certificate-area-block" data-container-type="certs">
+          <div class="certificate-area reset-mar">
+            <div class="certificate-slider certificate-slider">
+              <div class="swiper-wrapper">
+                {{#each certs}}
+                  <div class="cer-block swiper-slide">
+                    <img src="{{src}}" alt="" class="cer-01-img">
+                  </div>
+                {{/each}}
               </div>
-              <div id="2" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-2.png" alt="" class="cer-01-img">
-              </div>
-              <div id="3" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-3.png" alt="" class="cer-01-img">
-              </div>
-              <div id="4" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-4.png" alt="" class="cer-01-img">
-              </div>
-              <div id="5" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
-              </div>
-              <div id="6" class="cer-block swiper-slide">
-                  <img src="/images/bosh-tr-ts-1.png" alt="" class="cer-01-img">
-              </div>
-            </div>
-            <button class=" nav-btn  left-btn-n ">
+              <button class=" nav-btn  left-btn-n ">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
-                    <path d="
+                  <path d="
                 M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3
                 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8
                 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-            </button>
-            <button class=" nav-btn  right-btn-n">
+              </button>
+              <button class=" nav-btn  right-btn-n">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" class="nav-icon-slider">
-                    <path d="
+                  <path d="
                 M246.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8
                 12.5-45.3 0s-12.5-32.8 0-45.3L178.7 256 41.4 118.6c-12.5-12.5-12.5-32.8
                 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg>
-            </button>
-            <div id="dots-container" class=" s-dot-block"></div>
-          </div>
-        </div>
-          <div class="ser_block">
-            <div class="ser_container">
-                <img src="" alt="" class="cer-big-img">
+              </button>
+              <div id="dots-container" class=" s-dot-block"></div>
             </div>
           </div>
         </div>
+      {{/if}}
     </div>
 </div>
+{{#if certs.length}}
+  <div class="ser_block">
+    <div class="ser_container">
+      <img src="" alt="" class="cer-big-img">
+    </div>
+  </div>
+{{/if}}
 <div class="modal_container">
     <div class="modal_block">
         <h1 class="modal_text_title">Оставьте заявку </h1>

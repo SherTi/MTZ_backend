@@ -7,7 +7,7 @@ import {
   ForeignKey,
 } from "sequelize";
 import db from "./db";
-import { CharacterItem, Characters } from "./types";
+import { CharacterItem, Characters, RecommendedCategories } from "./types";
 
 export class Product extends Model<
   InferAttributes<Product>,
@@ -51,14 +51,23 @@ export class Category extends Model<
   declare updatedAt: CreationOptional<Date>;
 }
 
-export class Certificate extends Model<
-  InferAttributes<Certificate>,
-  InferCreationAttributes<Certificate>
+export class Settings extends Model<
+  InferAttributes<Settings>,
+  InferCreationAttributes<Settings>
 > {
-  declare id: CreationOptional<number>;
+  declare id: CreationOptional<string>;
+  declare phone_1: string;
+  declare phone_2: string;
+  declare telegram: string;
+  declare facebook: string;
+  declare instagram: string;
+  declare certificates: string[];
+  declare staff_main: string;
+  declare staff: string[];
+  declare partners: string[];
+  declare recommended_categories: RecommendedCategories[];
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
-  declare img_id: ForeignKey<Gallery["id"]>;
 }
 
 Product.init(
@@ -158,13 +167,68 @@ Category.init(
   { tableName: "categories", sequelize: db },
 );
 
-Certificate.init(
+Settings.init(
   {
-    id: { type: DataTypes.INTEGER, allowNull: false, primaryKey: true },
+    id: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      primaryKey: true,
+      unique: true,
+      defaultValue: DataTypes.UUIDV4,
+    },
+    phone_1: { type: DataTypes.TEXT, allowNull: false },
+    phone_2: { type: DataTypes.TEXT, allowNull: false },
+    telegram: { type: DataTypes.TEXT, allowNull: false },
+    facebook: { type: DataTypes.TEXT, allowNull: false },
+    instagram: { type: DataTypes.TEXT, allowNull: false },
+    certificates: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      get() {
+        return JSON.parse(this.getDataValue("certificates") as any);
+      },
+      set(value) {
+        this.setDataValue("certificates", JSON.stringify(value) as any);
+      },
+    },
+    staff_main: { type: DataTypes.TEXT, allowNull: false },
+    staff: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      get() {
+        return JSON.parse(this.getDataValue("staff") as any);
+      },
+      set(value) {
+        this.setDataValue("staff", JSON.stringify(value) as any);
+      },
+    },
+    recommended_categories: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      get() {
+        return JSON.parse(this.getDataValue("recommended_categories") as any);
+      },
+      set(value) {
+        this.setDataValue(
+          "recommended_categories",
+          JSON.stringify(value) as any,
+        );
+      },
+    },
+    partners: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      get() {
+        return JSON.parse(this.getDataValue("partners") as any);
+      },
+      set(value) {
+        this.setDataValue("partners", JSON.stringify(value) as any);
+      },
+    },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },
-  { tableName: "certificates", sequelize: db },
+  { tableName: "settings", sequelize: db },
 );
 
 Category.hasMany(Product, {
@@ -172,8 +236,4 @@ Category.hasMany(Product, {
 });
 Product.belongsTo(Category, {
   foreignKey: { name: "category_id", allowNull: false },
-});
-Gallery.hasMany(Certificate, { foreignKey: { name: "img_id" } });
-Certificate.belongsTo(Gallery, {
-  foreignKey: { name: "img_id", allowNull: false },
 });

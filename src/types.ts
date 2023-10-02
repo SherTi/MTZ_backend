@@ -29,3 +29,9 @@ export interface CreateCategoryBody {
   name?: string;
   image_id?: string;
 }
+
+export interface RecommendedCategories {
+  id: string;
+  name: string;
+  image: string;
+}
