@@ -114,16 +114,16 @@ window.addEventListener("DOMContentLoaded", () => {
         spaceBetween: 17,
       },
       560: {
-        slidesPerView: 2.8,
+        slidesPerView: 3,
       },
       425: {
-        slidesPerView: 1.7,
+        slidesPerView: 2.5,
       },
       375: {
-        slidesPerView: 1.7,
+        slidesPerView: 2.2,
       },
       320: {
-        slidesPerView: 1.6,
+        slidesPerView: 2,
       },
     },
   });
@@ -303,23 +303,21 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  const ser_big = document.querySelectorAll(".cer-block");
-  const ser_big_banner = document.querySelectorAll(".ser_container");
+  const ser_big = document.querySelectorAll(".cer-01-img");
+  const ser_big_banner = document.querySelector(".ser_container");
+  const cerImg = document.querySelector('.cer-big-img')
+
   if (ser_big) {
     ser_big.forEach((ser) => {
       ser.addEventListener("click", (event) => {
-        ser_big_banner.forEach((el) => {
-          if (ser.id === el.id) {
-            el.style.display = "inline-flex";
-            document.body.style.overflow = "hidden";
-            el.addEventListener("click", (event) => {
-              el.style.display = "none";
-              document.body.style.overflow = "visible";
-            });
-          } else {
+        const imgCerA = ser.getAttribute('src');
+        cerImg.setAttribute('src', imgCerA);
+        ser_big_banner.style.display = 'flex';
+        ser_big_banner.addEventListener('click', (event) => {
+          if (ser_big_banner.style.display === 'flex') {
+            ser_big_banner.style.display = "none";
           }
         });
-        event.preventDefault();
       });
     });
   }
@@ -445,3 +443,22 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+const imgProduct = document.querySelectorAll('.img-big-view');
+const modalImg = document.querySelector('.modal_container_img');
+const imgBig = document.querySelector('.img-big');
+
+if(imgProduct) {
+  imgProduct.forEach((img) => {
+    img.addEventListener('click', (event) => {
+      const imgB = img.getAttribute('src');
+      imgBig.setAttribute('src', imgB);
+      modalImg.style.display = 'flex';
+      modalImg.addEventListener('click', (event) => {
+        if (modalImg.style.display === 'flex') {
+          modalImg.style.display = "none";
+        }
+      });
+    });
+  });
+}

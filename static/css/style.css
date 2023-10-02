@@ -155,7 +155,6 @@ img {
 .s-c-title{
     font-weight: bold;
     font-size: 40px;
-    line-height: 48px;
     letter-spacing: 0.8px;
     margin-bottom: 8px;
 }
@@ -538,6 +537,10 @@ img {
 .certificate-area{
     position: relative;
     margin-bottom: 120px;
+}
+.mar-cer{
+    margin-top: 25px;
+    margin-bottom: 100px;
 }
 .certificate-slider{
     overflow-x: hidden;
@@ -1194,6 +1197,25 @@ img {
     justify-content: center;
     align-items: center;
     display: none;
+}
+.modal_container_img{
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
+    z-index: 101;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.img-big{
+    height: 90%;
+}
+.container-cer{
+    padding: 0 75px;
+    margin-top: 50px;
 }
 .modal_block{
     background: #ffffff;
