@@ -6,28 +6,51 @@
     </div>
     <div class="property-area">
         <div class="p-fst-block">
-            <div class="p-img-block">
-                <img src="{{product.img}}" alt="" class="p-img-item img-big-view">
-                <div class="p-img-set-t">
-                  {{#if product.st_image}}
-                    <img src="{{product.st_img}}" alt="" class="p-img-item-mini img-big-view">
-                  {{/if}}
-                  {{#if product.sd_image}}
-                    <img src="{{product.sd_img}}" alt="" class="p-img-item-mini img-big-view">
-                  {{/if}}
-                  {{#if product.th_image}}
-                    <img src="{{product.th_img}}" alt="" class="p-img-item-mini img-big-view">
-                  {{/if}}
+            <div class="content_body">
+                <div class="p-img-block">
+                    <img src="{{product.img}}" alt="" class="p-img-item img-big-view">
+                    <div class="p-img-set-t tab-var-set">
+                        {{#if product.st_image}}
+                            <img src="{{product.st_img}}" alt="" class="p-img-item-mini img-big-view">
+                        {{/if}}
+                        {{#if product.sd_image}}
+                            <img src="{{product.sd_img}}" alt="" class="p-img-item-mini img-big-view">
+                        {{/if}}
+                        {{#if product.th_image}}
+                            <img src="{{product.th_img}}" alt="" class="p-img-item-mini img-big-view">
+                        {{/if}}
+                    </div>
+                </div>
+                <div class="p-content-block">
+                    <div class="p-text-content-b">
+                        <h1 class="p-title mar-b-30 title-name">{{product.name}}</h1>
+                        {{#each product.main_chars}}
+                            <div class="p-text-block">
+                                <span class="p-key">{{key}}</span>
+                                <span>-</span>
+                                <span class="p-des">{{value}}</span>
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div class="">
+                        <p class="p-link-property mar-b-32">Все характеристики</p>
+                        <div class="p-btn-block">
+                            <button class="p-btn-more-info">Узнать стоимость</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="p-content-block">
-                <h1 class="p-title mar-b-30 title-name">{{product.name}}</h1>
-                {{#each product.main_chars}}
-                  <p class="p-des"><span>{{key}} -</span> {{value}}</p>
-                {{/each}}
-                <p class="p-link-property mar-b-32">Все характеристики</p>
-                <div class="p-btn-block">
-                    <button class="p-btn-more-info">Узнать стоимость</button>
+            <div class="content_footer">
+                <div class="p-img-set-t">
+                    {{#if product.st_image}}
+                        <img src="{{product.st_img}}" alt="" class="p-img-item-mini img-big-view">
+                    {{/if}}
+                    {{#if product.sd_image}}
+                        <img src="{{product.sd_img}}" alt="" class="p-img-item-mini img-big-view">
+                    {{/if}}
+                    {{#if product.th_image}}
+                        <img src="{{product.th_img}}" alt="" class="p-img-item-mini img-big-view">
+                    {{/if}}
                 </div>
                 <div class="p-c-card-block desktop_p-c-card-block">
                     <div class="p-c-card mar-r-20">
@@ -97,7 +120,7 @@
           <div class="property-block mar-b-30" data-container-type="characters">
             <ul>
               {{#each product.chars}}
-                <li class="p-title p-letter">{{name}}</li>
+                <li class="chapter_title p-letter">{{name}}</li>
                 {{#each characters}}
                   <li class="p-ul-des">
                     <span class="p-ul-des-text p-text-width">{{key}}</span>

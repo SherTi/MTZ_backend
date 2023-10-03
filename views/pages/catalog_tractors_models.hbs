@@ -7,7 +7,7 @@
         <div class="catalog_title_block">
             <h2 class="s-c-title">{{category.name}}</h2>
             <div class="search-input-block">
-                <input type="text" class="search-input" placeholder="Поиск по запчастям">
+                <input type="text" class="search-input" placeholder="Поиск">
                 <button class="search-btn"><img src="/images/search-normal.png" alt="" class="search-btn_icon"></button>
             </div>
         </div>
@@ -18,10 +18,16 @@
                   <img src="{{this.img}}" alt="" class="p-m-card-img-item">
                 </div>
                 <div class="p-m-card-content">
-                  <h4 class="p-m-title mar-15">{{this.name}}</h4>
-                  {{#each this.main_chars}}
-                    <p class="p-m-des"><span>{{this.key}} -</span> {{this.value}}</p>
-                  {{/each}}
+                  <div class="">
+                    <h4 class="p-m-title mar-15">{{this.name}}</h4>
+                    {{#each this.main_chars}}
+                        <div class="p-m-text-block">
+                            <span class="p-m-key">{{this.key}}</span>
+                            <span> - </span>
+                            <span class="p-m-des">{{this.value}}</span>
+                        </div>
+                    {{/each}}
+                  </div>
                   <a href="/property_tractors/{{this.id}}" class="mar-t-20">
                     <button class="p-m-btn">Подробнее</button>
                   </a>
