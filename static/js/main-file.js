@@ -463,13 +463,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const val = document.querySelectorAll('.p-des');
+  const val = document.querySelectorAll('.p-text-block');
 
   if (val) {
-    val.forEach((v) => {
-      v.addEventListener('click', (event) => {
+    val.forEach((p) => {
+      p.addEventListener('click', (event) => {
+        let k = p.children[0]
+        let v = p.children[2]
+        k.classList.toggle('view-string');
         v.classList.toggle('view-string');
-        let p = v.parentElement
         if (v.classList.contains('view-string')) {
           p.classList.add('active-block')
         } else if (!v.classList.contains('view-string')){
