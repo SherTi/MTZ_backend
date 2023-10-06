@@ -1,3 +1,27 @@
+interface Info {
+  id: string;
+  phone_1: string;
+  phone_2: string;
+  telegram: string;
+  facebook: string;
+  instagram: string;
+  certificates: string[];
+  staff_main: string;
+  staff: string[];
+  partners: string[];
+  recommended_categories: RecommendedCategories;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+declare global {
+  namespace Express {
+    interface Request {
+      info?: Info;
+    }
+  }
+}
+
 export type CharacterItem = {
   key: string;
   value: string;

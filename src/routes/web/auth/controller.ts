@@ -65,6 +65,7 @@ export class AuthController {
         }),
         category: cat,
         certs,
+        info: req.info,
       });
     } catch (e) {}
   }
@@ -108,6 +109,7 @@ export class AuthController {
           return !value.tractor;
         }),
         category,
+        info: req.info,
       });
     } catch (e) {}
   }
@@ -132,6 +134,7 @@ export class AuthController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        info: req.info,
       });
     } catch (e) {}
   }
@@ -156,6 +159,7 @@ export class AuthController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        info: req.info,
       });
     } catch (e) {}
   }
@@ -207,6 +211,7 @@ export class AuthController {
         certs,
         staff_images,
         staff_main,
+        info: req.info,
       });
     } catch (e) {}
   }
@@ -232,6 +237,7 @@ export class AuthController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        info: req.info,
       });
     } catch (e) {}
   }

@@ -131,7 +131,6 @@
 }
 .f-soc_li{
     display: flex;
-    justify-content: end;
 }
 @media (max-width: 1350px) {
     .tablet_footer{

@@ -47,6 +47,7 @@ export class MainController {
         }),
         cats,
         parts,
+        info: req.info,
       });
     } catch (e) {}
   }
