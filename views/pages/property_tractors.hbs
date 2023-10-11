@@ -176,12 +176,12 @@
     <div class="modal_block">
         <h1 class="modal_text_title">Оставьте заявку </h1>
         <p class="modal_text">Заполните пожалуйста форму и наши специлисты свяжутся с Вами чтобы сообщить стоимосить</p>
-        <div class="modal_form_block">
-            <input type="text" class="modal_form_input" placeholder="Ваше имя">
-            <input type="text" class="modal_form_input" placeholder="Ваш номер телефон">
-            <input type="text" class="modal_form_input" placeholder="Ваш E-mail">
-            <buttonc class="modal_btn">Отправить</buttonc>
-        </div>
+        <form class="modal_form_block" id="formElem">
+            <input type="text" class="modal_form_input" name="name"  value="" placeholder="Ваше имя">
+            <input type="text" class="modal_form_input" name="number" value="" placeholder="Ваш номер телефон">
+            <input type="text" class="modal_form_input" name="email" value=""  placeholder="Ваш E-mail">
+            <button type="submit" class="modal_btn">Отправить</button>
+        </form>
         <p class="modal_text_p">Нажимая отправить вы соглашаетесь с условиями обработки персональных данных</p>
     </div>
 </div>

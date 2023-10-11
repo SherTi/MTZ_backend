@@ -5,9 +5,11 @@ import productRoutes from "./product/routes";
 import categoryRoutes from "./category/routes";
 import galleryRoutes from "./gallery/routes";
 import settingsRoutes from "./settings/routes";
+import formRoutes from "./form/routes"
 
 const router = Router();
 router.use("/auth", authRoutes);
+router.use("/form", formRoutes);
 router.use(checkAuth(false));
 router.use("/product", productRoutes);
 router.use("/category", categoryRoutes);
