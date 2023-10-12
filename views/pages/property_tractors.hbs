@@ -176,10 +176,12 @@
     <div class="modal_block">
         <h1 class="modal_text_title">Оставьте заявку </h1>
         <p class="modal_text">Заполните пожалуйста форму и наши специлисты свяжутся с Вами чтобы сообщить стоимосить</p>
-        <form class="modal_form_block" id="formElem">
-            <input type="text" class="modal_form_input" name="name"  value="" placeholder="Ваше имя">
-            <input type="text" class="modal_form_input" name="number" value="" placeholder="Ваш номер телефон">
-            <input type="text" class="modal_form_input" name="email" value=""  placeholder="Ваш E-mail">
+        <form class="modal_form_block" id="formElem" enctype="multipart/form-data" action="/application" method="post">
+          <input type="hidden" name="redirect" value="/property_tractors/{{product.id}}">
+          <input type="hidden" name="product_name" value="{{product.name}}">
+            <input type="text" class="modal_form_input" name="name" placeholder="Ваше имя" required>
+            <input type="text" class="modal_form_input" name="number" placeholder="Ваш номер телефон" required>
+            <input type="text" class="modal_form_input" name="email" placeholder="Ваш E-mail" required>
             <button type="submit" class="modal_btn">Отправить</button>
         </form>
         <p class="modal_text_p">Нажимая отправить вы соглашаетесь с условиями обработки персональных данных</p>

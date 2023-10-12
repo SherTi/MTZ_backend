@@ -22,6 +22,7 @@ export class Product extends Model<
   declare sd_image?: string | null;
   declare th_image?: string | null;
   declare chars?: Characters[] | null;
+  declare isRecommended: CreationOptional<boolean>;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
   declare category_id: ForeignKey<Category["id"]>;
@@ -70,6 +71,20 @@ export class Settings extends Model<
   declare updatedAt: CreationOptional<Date>;
 }
 
+export class Applications extends Model<
+  InferAttributes<Applications>,
+  InferCreationAttributes<Applications>
+> {
+  declare id: CreationOptional<string>;
+  declare name: string;
+  declare phone: string;
+  declare mail: string;
+  declare product?: string;
+  declare submitted: CreationOptional<boolean>;
+  declare createdAt: CreationOptional<Date>;
+  declare updatedAt: CreationOptional<Date>;
+}
+
 Product.init(
   {
     id: {
@@ -104,6 +119,11 @@ Product.init(
       set(value) {
         return this.setDataValue("chars", JSON.stringify(value) as any);
       },
+    },
+    isRecommended: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
     },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
@@ -229,6 +249,30 @@ Settings.init(
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },
   { tableName: "settings", sequelize: db },
+);
+
+Applications.init(
+  {
+    id: {
+      type: DataTypes.UUID,
+      allowNull: false,
+      primaryKey: true,
+      unique: true,
+      defaultValue: DataTypes.UUIDV4,
+    },
+    name: { type: DataTypes.TEXT, allowNull: false },
+    phone: { type: DataTypes.TEXT, allowNull: false },
+    mail: { type: DataTypes.TEXT, allowNull: false },
+    product: { type: DataTypes.TEXT, allowNull: true },
+    submitted: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false,
+    },
+    createdAt: { type: DataTypes.DATE, allowNull: false },
+    updatedAt: { type: DataTypes.DATE, allowNull: false },
+  },
+  { tableName: "applications", sequelize: db },
 );
 
 Category.hasMany(Product, {

@@ -4,6 +4,7 @@ import authRoutes from "./web/auth/routes";
 import postsRoutes from "./web/posts/router";
 import apiRoutes from "./api/routes";
 import { Settings } from "../model";
+import applicationRoutes from "./web/application/routes";
 
 const router = Router();
 
@@ -21,6 +22,7 @@ router.get(
   },
   mainController.get,
 );
+router.use("/application", applicationRoutes);
 router.use(authRoutes);
 router.use("/posts", postsRoutes);
 router.use("/api", apiRoutes);
