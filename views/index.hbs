@@ -331,122 +331,34 @@
         </div>
     </div>
 </div>
-<div class="container">
+{{#if recommended.length}}
+  <div class="container">
     <div class="popular-model-area">
-        <h2 class="s-c-title">Популярные модели</h2>
-        <div class="p-m-block">
-            <div class="p-m-card mar-30">
-                <div class="p-m-card-img">
-                    <img src="/images/popular-model.png" alt="" class="p-m-card-img-item">
-                </div>
-                <div class="p-m-card-content">
-                    <div class="">
-                        <h4 class="p-m-title mar-15">Беларус МТЗ-1221.1</h4>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Мощность</span>
-                            <span> - </span>
-                            <span class="p-m-des">36 лс</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Двигатель</span>
-                            <span> - </span>
-                            <span class="p-m-des">Д260.2S2, 6 цилиндров с турбонадувом</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Коробка передач</span>
-                            <span> - </span>
-                            <span class="p-m-des">Синхронизированная</span>
-                        </div>
-                    </div>
-                    <a href="/property_tractors/{{this.id}}" class="mar-t-20">
-                        <button class="p-m-btn">Подробнее</button>
-                    </a>
-                </div>
+      <h2 class="s-c-title">Популярные модели</h2>
+      <div class="p-m-block">
+        {{#each recommended}}
+          <div class="p-m-card mar-30">
+            <div class="p-m-card-img">
+              <img src="/images/popular-model.png" alt="" class="p-m-card-img-item">
             </div>
-            <div class="p-m-card mar-30">
-                <div class="p-m-card-img">
-                    <img src="/images/popular-model.png" alt="" class="p-m-card-img-item">
-                </div>
-                <div class="p-m-card-content">
-                    <div class="">
-                        <h4 class="p-m-title mar-15">Беларус МТЗ-1221.1</h4>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Мощность</span>
-                            <span> - </span>
-                            <span class="p-m-des">36 лс</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Двигатель</span>
-                            <span> - </span>
-                            <span class="p-m-des">Д260.2S2, 6 цилиндров с турбонадувом</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Коробка передач</span>
-                            <span> - </span>
-                            <span class="p-m-des">Синхронизированная</span>
-                        </div>
-                    </div>
-                    <a href="/property_tractors/{{this.id}}" class="mar-t-20">
-                        <button class="p-m-btn">Подробнее</button>
-                    </a>
-                </div>
+            <div class="p-m-card-content">
+              <div class="">
+                <h4 class="p-m-title mar-15">{{name}}</h4>
+                {{#each main_chars}}
+                  <div class="p-m-text-block">
+                    <span class="p-m-key">{{key}}</span>
+                    <span> - </span>
+                    <span class="p-m-des">{{value}}</span>
+                  </div>
+                {{/each}}
+              </div>
+              <a href="/property_tractors/{{this.id}}" class="mar-t-20">
+                <button class="p-m-btn">Подробнее</button>
+              </a>
             </div>
-            <div class="p-m-card mar-30">
-                <div class="p-m-card-img">
-                    <img src="/images/popular-model.png" alt="" class="p-m-card-img-item">
-                </div>
-                <div class="p-m-card-content">
-                    <div class="">
-                        <h4 class="p-m-title mar-15">Беларус МТЗ-1221.1</h4>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Мощность</span>
-                            <span> - </span>
-                            <span class="p-m-des">36 лс</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Двигатель</span>
-                            <span> - </span>
-                            <span class="p-m-des">Д260.2S2, 6 цилиндров с турбонадувом</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Коробка передач</span>
-                            <span> - </span>
-                            <span class="p-m-des">Синхронизированная</span>
-                        </div>
-                    </div>
-                    <a href="/property_tractors/{{this.id}}" class="mar-t-20">
-                        <button class="p-m-btn">Подробнее</button>
-                    </a>
-                </div>
-            </div>
-            <div class="p-m-card mar-30">
-                <div class="p-m-card-img">
-                    <img src="/images/popular-model.png" alt="" class="p-m-card-img-item">
-                </div>
-                <div class="p-m-card-content">
-                    <div class="">
-                        <h4 class="p-m-title mar-15">Беларус МТЗ-1221.1</h4>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Мощность</span>
-                            <span> - </span>
-                            <span class="p-m-des">36 лс</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Двигатель</span>
-                            <span> - </span>
-                            <span class="p-m-des">Д260.2S2, 6 цилиндров с турбонадувом</span>
-                        </div>
-                        <div class="p-m-text-block">
-                            <span class="p-m-key">Коробка передач</span>
-                            <span> - </span>
-                            <span class="p-m-des">Синхронизированная</span>
-                        </div>
-                    </div>
-                    <a href="/property_tractors/{{this.id}}" class="mar-t-20">
-                        <button class="p-m-btn">Подробнее</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
-</div>
+  </div>
+{{/if}}

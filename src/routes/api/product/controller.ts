@@ -71,4 +71,85 @@ export class ProductController {
       });
     }
   }
+  async get(req: Request, res: Response) {
+    try {
+      const products = await Product.findAll({
+        order: [["createdAt", "DESC"]],
+      });
+      res.status(200).json({
+        status: true,
+        message: "Успешно!",
+        data: products,
+      });
+    } catch (e) {
+      res.status(200).json({
+        status: false,
+        message: "Увы что то пошло не так!",
+        data: null,
+      });
+    }
+  }
+  async delete(req: Request, res: Response) {
+    try {
+      const { id } = req.body;
+      if (!id) {
+        res.status(200).json({
+          status: false,
+          message: "Нет необходимых параметров!",
+          data: null,
+        });
+        return;
+      }
+      await Product.destroy({
+        where: { id },
+      });
+      res.status(200).json({
+        status: true,
+        message: "Успешно!",
+        data: null,
+      });
+    } catch (e) {
+      res.status(200).json({
+        status: false,
+        message: "Увы что то пошло не так!",
+        data: null,
+      });
+    }
+  }
+  async toPopular(req: Request, res: Response) {
+    try {
+      const { id } = req.body;
+      if (!id) {
+        res.status(200).json({
+          status: false,
+          message: "Нет необходимых параметров!",
+          data: null,
+        });
+        return;
+      }
+      const product = await Product.findOne({ where: { id } });
+      if (!product) {
+        res.status(200).json({
+          status: false,
+          message: "Нет необходимых параметров!",
+          data: null,
+        });
+        return;
+      }
+      await product.update({
+        isRecommended: !product.isRecommended,
+      });
+      res.status(200).json({
+        status: true,
+        message: "Успешно!",
+        data: product.isRecommended,
+      });
+    } catch (e) {
+      res.status(200).json({
+        status: false,
+        message: "Увы что то пошло не так!",
+        data: null,
+      });
+    }
+  }
 }

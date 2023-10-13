@@ -380,7 +380,7 @@ img {
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.28px;
-    width: 100%;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -419,7 +419,7 @@ img {
 }
 .p-m-key{
     white-space: nowrap;
-    width: 100%;
+    max-width: 100%;
     display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;

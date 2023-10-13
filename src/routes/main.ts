@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Category, Gallery, Settings } from "../model";
+import { Category, Gallery, Product, Settings } from "../model";
 
 export class MainController {
   async get(req: Request, res: Response) {
@@ -35,6 +35,21 @@ export class MainController {
           }
         }
       }
+      const recommended = await Product.findAll({
+        where: { isRecommended: true },
+      });
+      const rResult: any[] = [];
+      for (const r of recommended) {
+        const re = r.toJSON();
+        (re as any).img = await Gallery.findOne({
+          where: { id: r.main_image },
+          raw: true,
+        });
+        rResult.push(re);
+      }
+
+      console.log(rResult[0]);
+
       res.render("index", {
         styles: ["header.css", "style.css", "footer.css"],
         main: true,
@@ -48,6 +63,7 @@ export class MainController {
         cats,
         parts,
         info: req.info,
+        recommended: rResult,
       });
     } catch (e) {}
   }
