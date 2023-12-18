@@ -259,6 +259,21 @@ header{
     opacity: 1;
     transition: all .3s;
 }
+.pc_version_nav{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.pc_version_nav::-webkit-scrollbar {
+    width: 4px;
+    background: #ffffff;
+}
+.pc_version_nav::-webkit-scrollbar-thumb {
+    background: #2A84FF;
+    border-radius: 3px;
+}
+.pc_version_nav:hover{
+    overflow: visible;
+}
 .text-nav{
     font-size: 16px;
     font-style: normal;
