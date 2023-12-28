@@ -11,13 +11,22 @@ import { Sequelize } from "sequelize";
 // });
 
 export default new Sequelize({
-  host: "127.0.0.1",
+  host: "localhost",
   port: 3306,
   dialect: "mysql",
   database: "mtz_tractor",
-  username: "root",
-  password: "M*N1u(n*jEZp5!XW",
+  username: "xoji",
+  password: "7LpBpgdmo8EeHk4/",
   logging: false,
 });
 // xoji1248000
 // M*N1u(n*jEZp5!XW
+
+
+// root
+// M*N1u(n*jEZp5!XW
+
+
+//Ofice Windows
+// Login: xoji
+// password: 7LpBpgdmo8EeHk4/

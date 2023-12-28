@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { Category, Gallery, Product, Settings } from "../model";
+import {getCategories} from "../utils/getCategories";
 
 export class MainController {
   async get(req: Request, res: Response) {
@@ -48,8 +49,9 @@ export class MainController {
         rResult.push(re);
       }
 
-      console.log(rResult[0]);
-
+      // console.log(rResult[0]);
+      const c = await getCategories();
+      // console.log(JSON.stringify(c, undefined, 2));
       res.render("index", {
         styles: ["header.css", "style.css", "footer.css"],
         main: true,
@@ -60,6 +62,7 @@ export class MainController {
         spare_categories: categories.filter((value) => {
           return !value.tractor;
         }),
+        categories: c,
         cats,
         parts,
         info: req.info,

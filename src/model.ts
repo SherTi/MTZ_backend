@@ -50,6 +50,7 @@ export class Category extends Model<
   declare tractor: boolean;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
+  declare category_id: ForeignKey<Category["id"]> | null;
 }
 
 export class Settings extends Model<
@@ -274,6 +275,9 @@ Applications.init(
   },
   { tableName: "applications", sequelize: db },
 );
+
+Category.hasMany(Category, { foreignKey: { name: "category_id", allowNull: true } });
+Category.belongsTo(Category, { foreignKey: { name: "category_id", allowNull: true } });
 
 Category.hasMany(Product, {
   foreignKey: { name: "category_id", allowNull: false },

@@ -987,20 +987,13 @@ img {
     opacity: 0;
     transform: translateX(-50%);
 }
-.stroke-nav:hover .icon-nav_item{
-    opacity: 1;
-    transform: translateX(0%);
-}
+
 .nav-block_element{
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-.nav-btn_item{
-    display: flex;
-    position: relative;
-    align-items: center;
-}
+
 .just-schema{
     margin: 100px 0 ;
 }
