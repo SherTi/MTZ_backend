@@ -9,10 +9,10 @@ import cookieParser from "cookie-parser";
 import db from "./db";
 import "./model";
 import router from "./routes/router";
-import {getCategories} from "./utils/getCategories";
-import {Category} from "./model";
+import { getCategories } from "./utils/getCategories";
+import { Category } from "./model";
 import * as fs from "fs";
-import {getRootDir} from "./utils/getRootDir";
+import { getRootDir } from "./utils/getRootDir";
 
 class CompileCategory extends Category {
   declare sub_categories: CompileCategory[];
@@ -29,7 +29,6 @@ app.use(
   }),
 );
 
-
 // function compileSubCategories(args: CompileCategory) {
 //   // const template = HBS.compile(fs.readFileSync(path.resolve(getRootDir(), "views", "partials", "category_list.hbs"), 'utf8'));
 //   // let str: string | null = null;
@@ -45,11 +44,16 @@ app.use(
 // }
 
 HBS.registerHelper("view_category", (args: CompileCategory, from: string) => {
-  const template = HBS.compile(fs.readFileSync(path.resolve(getRootDir(), "views", "partials", "category_list.hbs"), 'utf8'));
-  const result = template(args);
-  console.log(`From: ${from}`, 'Result: \n', result);
-  return result;
-  // return new HBS.SafeString(template(args));
+  const template = HBS.compile(
+    fs.readFileSync(
+      path.resolve(getRootDir(), "views", "partials", "category_list.hbs"),
+      "utf8",
+    ),
+  );
+  // const result = template(args);
+  // console.log(`From: ${from}`, 'Result: \n', result);
+  // return result;
+  return new HBS.SafeString(template(args));
   // return compileSubCategories(args);
 });
 HBS.registerHelper("json_log", (args: any) => {

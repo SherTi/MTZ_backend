@@ -11,7 +11,7 @@ import { Sequelize } from "sequelize";
 // });
 
 export default new Sequelize({
-  host: "localhost",
+  host: "127.0.0.1",
   port: 3306,
   dialect: "mysql",
   database: "mtz_tractor",
@@ -22,10 +22,8 @@ export default new Sequelize({
 // xoji1248000
 // M*N1u(n*jEZp5!XW
 
-
 // root
 // M*N1u(n*jEZp5!XW
-
 
 //Ofice Windows
 // Login: xoji
