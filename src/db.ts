@@ -15,8 +15,8 @@ export default new Sequelize({
   port: 3306,
   dialect: "mysql",
   database: "mtz_tractor",
-  username: "xoji",
-  password: "7LpBpgdmo8EeHk4/",
+  username: "root",
+  password: "M*N1u(n*jEZp5!XW",
   logging: false,
 });
 // xoji1248000

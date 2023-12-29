@@ -133,6 +133,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const nav_bnt_2 = document.querySelector(".under_categories");
   const nav_btn_part = document.querySelector(".under_categories_2");
   const menu_part = document.querySelector(".container-nav_part");
+  const nav_btn_f = document.querySelector('.nav-btn-footer');
   if (nav_bnt) {
     nav_bnt.addEventListener("click", (event) => {
       event.preventDefault();
@@ -153,6 +154,13 @@ window.addEventListener("DOMContentLoaded", () => {
       menu_part.classList.add("active");
       document.body.style.overflow = "hidden";
     });
+  }
+  if (nav_btn_f) {
+    nav_btn_f.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu.classList.add("active");
+      document.body.style.overflow = "hidden";
+    })
   }
   if (menu) {
     menu.addEventListener("click", (event) => {
@@ -233,9 +241,16 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   let order_btn = document.querySelector(".p-btn-more-info");
+  const order_btn_m = document.querySelector('.link_site');
   let order_box = document.querySelector(".modal_container");
   if (order_btn) {
     order_btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      order_box.classList.add("modal_view");
+    });
+  }
+  if (order_btn_m) {
+    order_btn_m.addEventListener('click', (event) => {
       event.preventDefault();
       order_box.classList.add("modal_view");
     });
