@@ -182,6 +182,8 @@ window.addEventListener("DOMContentLoaded", () => {
   let btn_menu = document.querySelector(".btn_nav_panel");
   let menu_body = document.querySelector(".background_r-nav-menu");
   let menu_active_btn = document.querySelector(".catalog-btn");
+  const btn_menu_f = document.querySelector(".btn_f")
+  const btn_menu_f1 = document.querySelector('.btn_f_1')
   if (btn_menu) {
     if (menu_active_btn) {
       menu_active_btn.addEventListener("click", () => {
@@ -190,6 +192,24 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     }
     btn_menu.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu_body.classList.toggle("active_menu");
+      if (menu_body.classList.contains("active_menu")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    });
+  }
+  if (btn_menu_f) {
+    if (menu_active_btn) {
+      menu_active_btn.addEventListener("click", () => {
+        menu_body.classList.add("active_menu");
+        document.body.style.overflow = "hidden";
+      });
+    }
+    btn_menu_f.addEventListener("click", (event) => {
+      console.log('click')
       event.preventDefault();
       menu_body.classList.toggle("active_menu");
       if (menu_body.classList.contains("active_menu")) {
