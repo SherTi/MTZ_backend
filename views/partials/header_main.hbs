@@ -132,7 +132,7 @@
         <div class="nav-left-panel">
             <ul class="nav-block1 pc_version_nav">
                 <li class="title-nav-left"><p>Каталог техники</p></li>
-                {{#each categories}}
+                {{#each tractor_categories}}
                   {{#if sub_categories.length}}
                     <span class="under_category_link">
                       <button class="nav-btn_item">
@@ -163,20 +163,27 @@
             <ul class="nav-block1 pc_version_nav">
                 <li class="title-nav-left"><p>Каталог запасных частей</p></li>
               {{#each spare_categories}}
-                <a href="/catalog_tractors_models/{{this.id}}" class="under_category_link">
-                  <li class="nav-element-l stroke-nav">
+                {{#if sub_categories.length}}
+                  <span class="under_category_link">
+                      <button class="nav-btn_item">
+                        <span class="text-nav">{{this.name}}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" class="icon-nav_item">
+                          <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
+                        </svg>
+                      </button>
+                    {{#view_category this 'main_category'}}{{/view_category}}
+                    </span>
+                {{else}}
+                  <a href="/catalog_tractors_models/{{this.id}}" class="under_category_link">
                     <button class="nav-btn_item">
                       <span class="text-nav">{{this.name}}</span>
                       <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512" class="icon-nav_item">
                         <path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/>
                       </svg>
                     </button>
-                  </li>
-                  <div class="under_categories_card">
-                    <img src="{{this.src}}" alt="" class="category_img">
-                    <span class="category_name">{{this.name}}</span>
-                  </div>
-                </a>
+                    {{#view_category this 'main_category'}}{{/view_category}}
+                  </a>
+                {{/if}}
               {{/each}}
             </ul>
         </div>

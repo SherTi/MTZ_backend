@@ -52,6 +52,12 @@ export interface CreateCategoryBody {
   type?: "tractor" | "spare";
   name?: string;
   image_id?: string;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  index?: number;
+  category_id?: string;
+  change_category_id?: string;
 }
 
 export interface RecommendedCategories {

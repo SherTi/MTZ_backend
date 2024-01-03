@@ -3,7 +3,7 @@ import {Op} from "sequelize";
 
 export async function getCategories() {
   try {
-    const dbCategories = await Category.findAll({ where: { category_id: { [Op.eq]: null } }, raw: true });
+    const dbCategories = await Category.findAll({ where: { category_id: { [Op.eq]: null } }, order: [["index", "ASC"], ["createdAt", "ASC"]], raw: true });
     for (let i = 0; i < dbCategories.length; i++) {
       if (dbCategories[i].image_id) {
         const image = await Gallery.findOne({
@@ -26,7 +26,7 @@ async function getSubCategories(cat: Category) {
   try {
     const count = await Category.count({ where: { category_id: cat.id } });
     if (count) {
-      const s_c = await Category.findAll({ where: { category_id: cat.id }, raw: true });
+      const s_c = await Category.findAll({ where: { category_id: cat.id }, order: [["index", "ASC"], ["createdAt", "ASC"]], raw: true });
       for (let i = 0; i < s_c.length; i++) {
         if (s_c[i].image_id) {
           const image = await Gallery.findOne({

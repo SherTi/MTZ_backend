@@ -48,6 +48,10 @@ export class Category extends Model<
   declare name: string;
   declare image_id?: string | null;
   declare tractor: boolean;
+  declare title?: string | null;
+  declare description?: string | null;
+  declare keywords?: string | null;
+  declare index?: number | null;
   declare createdAt: CreationOptional<Date>;
   declare updatedAt: CreationOptional<Date>;
   declare category_id: ForeignKey<Category["id"]> | null;
@@ -182,6 +186,10 @@ Category.init(
     name: { type: DataTypes.STRING, allowNull: false },
     image_id: { type: DataTypes.TEXT, allowNull: true },
     tractor: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: false },
+    title: { type: DataTypes.TEXT, allowNull: true },
+    description: { type: DataTypes.TEXT, allowNull: true },
+    keywords: { type: DataTypes.TEXT, allowNull: true },
+    index: { type: DataTypes.INTEGER, allowNull: true },
     createdAt: { type: DataTypes.DATE, allowNull: false },
     updatedAt: { type: DataTypes.DATE, allowNull: false },
   },
