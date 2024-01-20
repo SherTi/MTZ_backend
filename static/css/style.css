@@ -812,7 +812,6 @@ img {
     line-height: 22px;
     font-style: normal;
     margin-bottom: 20px;
-    width: 64%;
     letter-spacing: 0.54px;
 }
 .p-b-des-t-title{
@@ -1434,6 +1433,9 @@ img {
 }
 .background_r-nav-menu{
     display: none;
+    flex-direction: column;
+    align-content: center;
+    background: #ffffff;
 }
 .btn_block{
     width: 50%;
@@ -1992,10 +1994,11 @@ img {
         margin-top: 20px;
     }
     .r-nav-menu{
-        width: 310px;
+        width: 100%;
+        overflow-y:scroll;
         background: #ffffff;
         height: 100vh;
-        padding: 116px 0 0 25px;
+        padding: 30px 0 0 25px;
     }
     .r-nav-title-text{
         font-size: 14px;
@@ -2682,9 +2685,6 @@ img {
     }
     .p-item-block{
         padding-left:40px ;
-    }
-    .r-nav-menu{
-        width: 100%;
     }
     .modal_block{
         width: 330px;
