@@ -100,7 +100,7 @@ header{
 .icon-nav{
     margin-left: 10px;
 }
-.nav-up li{
+.h-nav-el{
     display: flex;
     align-items: center;
 }
@@ -345,7 +345,6 @@ header{
 }
 
 .background_r-nav-menu{
-    display: none;
     position: fixed;
     z-index: 99;
     top: 0;
@@ -359,6 +358,9 @@ header{
 }
 .active_list{
     transform: translateX(0);
+}
+.cur_p{
+    cursor: pointer;
 }
 @keyframes flashing {
     0%   {background: #36FF5B}
@@ -478,9 +480,6 @@ header{
     .container{
         padding: 0 calc((100% - 550px) /2);
     }
-    .nav-b{
-        display: none;
-    }
 }
 @media (max-width: 560px) {
     .container{
@@ -506,6 +505,20 @@ header{
 }
 @media (max-width: 525px) {
     .r-nav-menu_tablet{
+        display: none;
+    }
+    .rou::after{
+        content: "";
+        display: none;
+    }
+    .nav-b{
+        margin-left: 0;
+    }
+    .nav-l{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .n-block{
         display: none;
     }
 }

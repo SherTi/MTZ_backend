@@ -132,6 +132,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector(".container-nav");
   const nav_bnt_2 = document.querySelector(".under_categories");
   const nav_btn_part = document.querySelector(".under_categories_2");
+  const f_nav_btn_p = document.querySelector('.btn_f_part');
   const menu_part = document.querySelector(".container-nav_part");
   const nav_btn_f = document.querySelector('.nav-btn-footer');
   if (nav_bnt) {
@@ -154,6 +155,13 @@ window.addEventListener("DOMContentLoaded", () => {
       menu_part.classList.add("active");
       document.body.style.overflow = "hidden";
     });
+  }
+  if (f_nav_btn_p) {
+    f_nav_btn_p.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu_part.classList.add("active");
+      document.body.style.overflow = "hidden";
+    })
   }
   if (nav_btn_f) {
     nav_btn_f.addEventListener("click", (event) => {
@@ -185,6 +193,8 @@ window.addEventListener("DOMContentLoaded", () => {
   let menu_active_btn = document.querySelector(".catalog-btn");
   const btn_menu_f = document.querySelector(".btn_f")
   const btn_menu_f1 = document.querySelector('.btn_f_1')
+  const btn_f_p = document.querySelector(".btn_f_t_p")
+  const f_btn_m = document.querySelector(".btn_f_m");
   if (btn_menu) {
     if (menu_active_btn) {
       menu_active_btn.addEventListener("click", () => {
@@ -201,6 +211,33 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "visible";
       }
     });
+    f_btn_m.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu_body.classList.add("active_menu");
+      if (menu_body.classList.contains("active_menu")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    })
+    btn_menu_f1.addEventListener("click", (event)=> {
+      event.preventDefault();
+      menu_body.classList.add("active_menu");
+      if (menu_body.classList.contains("active_menu")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    });
+    btn_f_p.addEventListener("click", (event) => {
+      event.preventDefault();
+      menu_body.classList.add("active_menu");
+      if (menu_body.classList.contains("active_menu")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "visible";
+      }
+    })
     btn_menu_c.addEventListener("click", (event) => {
       event.preventDefault();
       menu_body.classList.remove("active_menu");
