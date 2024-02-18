@@ -241,4 +241,14 @@ export class AuthController {
       });
     } catch (e) {}
   }
+  async privacy_policy(req: Request, res: Response) {
+    try{
+
+      res.render("privacy_policy", {
+        styles: ["header.css", "style.css" , "footer.css"]
+      });
+    } catch (e) {
+
+    }
+  };
 }

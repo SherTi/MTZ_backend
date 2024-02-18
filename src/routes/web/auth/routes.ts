@@ -18,5 +18,6 @@ router.get("/catalog_spare_parts", controller.catalog_parts);
 router.get("/property_parts", controller.property_part);
 router.get("/about_us", controller.about_company);
 router.get("/contact", controller.contact);
+router.get('/privacy_policy', controller.privacy_policy);
 
 export default router;
