@@ -33,7 +33,7 @@
                         {{/each}}
                     </div>
                     <div class="">
-                        <p class="p-link-property mar-b-32">Все характеристики</p>
+                        <a href="#1"><p class="p-link-property mar-b-32">Все характеристики</p></a>
                         <div class="p-btn-block">
                             <button class="p-btn-more-info">Узнать стоимость</button>
                         </div>
@@ -83,7 +83,7 @@
             </div>
         </div>
       {{#if product.is_tractor}}
-        <div class="p-nav-panel des_tab_btn-p-nav-panel">
+        <div class="p-nav-panel des_tab_btn-p-nav-panel" id="1">
           <a class="p-nav-btn" data-type="general">Описание</a>
           {{#if product.chars}}
             {{#if product.chars.length}}

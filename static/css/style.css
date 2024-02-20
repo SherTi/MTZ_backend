@@ -701,6 +701,7 @@ img {
     font-weight: 400;
     color: #0061E7;
     letter-spacing: 0.36px;
+    cursor: pointer;
 }
 .p-btn-more-info{
     width: 232px;
