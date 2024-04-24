@@ -1,12 +1,12 @@
 import { Sequelize } from "sequelize";
 
 export default new Sequelize({
-  host: "localhost",
+  host: "127.0.0.1",
   port: 3306,
   dialect: "mysql",
-  database: "mtz_tractor",
-  username: "root",
-  password: "M*N1u(n*jEZp5!XW",
+  database: "brtradeu_gen_base",
+  username: "brtradeu_gen_base",
+  password: "BzsMztHs5B",
   logging: false,
 });
 
