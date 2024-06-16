@@ -732,6 +732,11 @@ img {
     justify-content: space-between;
     margin-left: 55px;
 }
+
+.desktop_p-c-card-block {
+    margin-top: 20px;
+}
+
 .p-c-card{
     padding: 14px 48px 68px 14px;
     width: 100%;
